@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro Alimentação - Health Track</title>
+
+  <link rel="shortcut icon" href="assets/images/favicon-20210622072946109.ico" type="image/x-icon">
+  <link rel="icon" href="assets/images/favicon-20210622072946109.ico" type="image/x-icon">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="assets/vendors/bootstrap-5.0.1-dist/css/bootstrap.min.css">
+
+  <!-- Main -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+
+<body>
+  <div class="ht-dashboard">
+    <a data-bs-toggle="offcanvas" href="#menu" role="button" aria-controls="offcanvasExample" class="ht-hamburguer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+      </svg>
+    </a>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="menu" aria-labelledby="menu">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">O que você deseja?</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <nav>
+          <ul>
+            <li>
+              <a href="cad-atividade.html">
+                <img src="assets/images/ico-runner.svg" alt=""> Cadastrar Atividade
+              </a>
+            </li>
+            <li>
+              <a href="cad-alimentacao.html">
+                <img src="assets/images/ico-apple.svg" alt=""> Cadastrar Alimentação
+              </a>
+            </li>
+            <li>
+              <a href="cad-imc.html">
+                <img src="assets/images/ico-muscle.svg" alt=""> Cadastrar meu IMC
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <main>
+      <header class="container">
+        <div class="ht-header-logo">
+          <a href="dash.html" title="Health Track" class="ht-logo-letter">
+            <img src="assets/images/logo-letters.svg" alt="">
+          </a>
+          <h6>
+            <a href="dash.html" title="Volta ao Dashboard">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z">
+                </path>
+              </svg></a> Cadastro
+          </h6>
+        </div>
+
+        <div class="ht-header-userprofile">
+          <a href="perfil.html" class="ht-user">
+            <img src="assets/images/ico-user.svg" alt="">
+            <span class="ht-user-alert"></span>
+          </a>
+        </div>
+      </header>
+
+      <div class="container">
+        <form class="row g-4">
+          <h5>Cadastro de IMC</h5>
+          <hr>
+
+          <div class="col-md-6">
+            <label for="txtHeight" class="form-label">Informe sua altura</label>
+            <input type="number" class="form-control" id="txtHeight">
+          </div>
+          <div class="col-md-6">
+            <label for="txtWeight" class="form-label">Informe seu peso</label>
+            <input type="number" class="form-control" id="txtWeight">
+          </div>
+          <div class="col-md-6">
+            <label for="txtDate" class="form-label">Data</label>
+            <input type="date" class="form-control" id="txtDate">
+          </div>
+          <div class="col-md-4">
+            <label for="txtQuantity" class="form-label">&nbsp;</label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="chkSaveHistory">
+              <label class="form-check-label" for="chkSaveHistory">
+                Adicionar no histórico?
+              </label>
+            </div>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary float-end">Cadastrar</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/vendors/bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

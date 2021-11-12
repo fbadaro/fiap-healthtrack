@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8C841DF6-C46B-DE26-D180-A104C1CD34E9" name="TCI_CATEGORIA">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:40:05 UTC</createdTime>
+<generatorID>D096DAE5-A11E-98C0-B0B7-7C5BEDD36FF3</generatorID>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="E2DC3049-813C-3730-7163-D58D7687B7EF">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:40:05 UTC</createdTime>
+<generatorID>D3B0EAE5-0D69-C5C5-3D20-EA26B96AA353</generatorID>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOME" id="E9DC6A68-DC6A-7D3C-E3BE-9D973A56407E">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:40:05 UTC</createdTime>
+<generatorID>B6426ECB-F83B-89DA-6F02-313F67477C2B</generatorID>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1E835BC3-0244-80FC-32BA-CFDEE9BD3A2B" name="TCI_CATEGORIA_PK">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:40:05 UTC</createdTime>
+<generatorID>CA379E5C-38BC-F08A-757C-5F2A7C01B6FB</generatorID>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E2DC3049-813C-3730-7163-D58D7687B7EF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

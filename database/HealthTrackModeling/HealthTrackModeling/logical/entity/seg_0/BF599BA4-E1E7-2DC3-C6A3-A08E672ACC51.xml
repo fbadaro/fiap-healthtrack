@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BF599BA4-E1E7-2DC3-C6A3-A08E672ACC51" name="THT_SOCIAL_006">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:34:30 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="47431D21-E613-B2B5-081F-DA89E3A52290">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:34:49 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="url" id="CD3239F8-4B61-7C62-DA1F-BB214131D298">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:35:03 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="isIntegrated" id="45F8E51D-0412-B699-6242-58B4801AEE12">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:35:24 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="isDefaultAuth" id="1F9EBF21-1D53-42C6-4540-BEAE7EA947BC">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:35:42 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="userId" id="F8F79AD4-AB59-BB60-AF38-4A628B4D4A83">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:02:10 UTC</createdTime>
+<generatorID>FB61213E-BD05-BDCC-86FA-426A648D6C19</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<referedAttribute>1FC8BC7E-257A-70B5-A177-E165A50701CD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<preferredAbbreviation>userId</preferredAbbreviation>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="CC124725-04D2-8D7E-6A06-C7EDD72E803F" name="THT_SOCIAL_PK">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:34:58 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>47431D21-E613-B2B5-081F-DA89E3A52290</newElementsIDs>
+<usedAttributes>
+<attributeRef>47431D21-E613-B2B5-081F-DA89E3A52290</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

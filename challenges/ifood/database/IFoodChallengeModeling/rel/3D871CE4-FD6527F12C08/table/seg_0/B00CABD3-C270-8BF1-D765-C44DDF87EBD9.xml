@@ -1,0 +1,123 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B00CABD3-C270-8BF1-D765-C44DDF87EBD9" name="TCI_ITEM">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:40:05 UTC</createdTime>
+<generatorID>A48E4BBA-E265-0693-7A15-44528E5F1CDE</generatorID>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="54F7AE72-5582-0AF1-5B19-62907BDF3D93">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:40:05 UTC</createdTime>
+<generatorID>50A7956B-0431-232C-E874-AB026C78D49A</generatorID>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOME" id="EB52BB3D-05BD-28F9-052F-2C0DEA232F23">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:40:05 UTC</createdTime>
+<generatorID>16B4FAD5-21C6-2D9A-D587-4595E2C5EEC9</generatorID>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCRICAO" id="55E58C17-9CA5-2441-FE1B-51A284801D86">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:40:05 UTC</createdTime>
+<generatorID>24D1BA33-6A92-3F9F-82F2-166F4DF8DF60</generatorID>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1000</dataTypeSize>
+<ownDataTypeParameters>1000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRECO" id="8164229B-DC44-577E-FCBB-576397FC3064">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:40:05 UTC</createdTime>
+<generatorID>4D8B22A0-52F6-D201-E8F6-5F6FE4BF50B0</generatorID>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CRIADOEM" id="D275F85A-37E2-AB17-5642-CBBC873D5147">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:40:05 UTC</createdTime>
+<generatorID>A85BD2A5-EBB1-02DE-47CE-BF95BDB13216</generatorID>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FOTO" id="787DB3DD-4D20-5594-5CF5-49F308EFB128">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:40:05 UTC</createdTime>
+<generatorID>A5B5AF60-CB0E-025B-76F1-EB5C4E603465</generatorID>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TCI_PRATELEIRA_ID" id="951D40D2-AA41-965B-A427-B6F8E329CADA">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:40:05 UTC</createdTime>
+<generatorID>118C52AB-E371-1DD6-7FB9-76C1FFB551D1</generatorID>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F516082D-29C3-A83B-6262-0F89DC38286C" referredColumn="CEC09717-0B28-760E-E833-40C03BDFE4DC"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BFD4FE01-3041-8EB5-0E38-755A6A831D80" name="TCI_ITEM_PK">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:40:05 UTC</createdTime>
+<generatorID>3D0E6368-6963-A81B-2D84-CB847B95BD11</generatorID>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="54F7AE72-5582-0AF1-5B19-62907BDF3D93"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8E6582DE-E5BA-5714-48E6-A7DCD9EBC6AD" name="TCI_ITEM_TCI_PRATELEIRA_FK">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:40:05 UTC</createdTime>
+<generatorID>4A458480-B765-AD0E-5DEA-BEC99CAED741</generatorID>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="951D40D2-AA41-965B-A427-B6F8E329CADA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

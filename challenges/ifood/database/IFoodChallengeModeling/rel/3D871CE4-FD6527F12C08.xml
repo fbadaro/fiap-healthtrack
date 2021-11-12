@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<relationalModel class="oracle.dbtools.crest.model.design.relational.RelationalDesign" name="Relational_1" id="3D871CE4-5F87-15B7-CFAF-FD6527F12C08" mainViewID="F7283B3D-B82C-3644-B25C-890D8DE3B6E4">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 19:58:55 UTC</createdTime>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+<selectedRDBMSSite>32076570-2523-435C-2E92-BF29817DFF70</selectedRDBMSSite>
+</relationalModel>

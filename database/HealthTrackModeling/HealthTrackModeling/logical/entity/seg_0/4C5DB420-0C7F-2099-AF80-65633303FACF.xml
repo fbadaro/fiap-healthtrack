@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4C5DB420-0C7F-2099-AF80-65633303FACF" name="THT_USPRESSURE_012">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:48:09 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="8017B6CD-ECCE-81E3-B7D1-035FFE16C895">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:48:28 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="diastolicPresssure" id="D1D025E1-2B8D-89E9-0F9D-8592B7D42206">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:48:38 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="systolicPressure" id="020617B8-ECED-ABD4-2F1F-308EC232F274">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:48:53 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="date" id="AE7FFA38-AFE1-7403-468A-EFF52D271D57">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:49:07 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="userId" id="A59B6325-9626-29C9-01C3-ADE246DB2656">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 03:17:46 UTC</createdTime>
+<generatorID>2287FC38-8A46-3293-B677-03CDE533E770</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<referedAttribute>1FC8BC7E-257A-70B5-A177-E165A50701CD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<preferredAbbreviation>userId</preferredAbbreviation>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A22EC6B9-32EE-98BF-E519-A384D61531CF" name="THT_USPRESSURE_PK">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:48:35 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>8017B6CD-ECCE-81E3-B7D1-035FFE16C895</newElementsIDs>
+<usedAttributes>
+<attributeRef>8017B6CD-ECCE-81E3-B7D1-035FFE16C895</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

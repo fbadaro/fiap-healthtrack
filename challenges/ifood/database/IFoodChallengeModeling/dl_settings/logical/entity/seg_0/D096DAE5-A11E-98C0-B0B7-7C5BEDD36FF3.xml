@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D096DAE5-A11E-98C0-B0B7-7C5BEDD36FF3" name="TCI_CATEGORIA">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 20:03:15 UTC</createdTime>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<engineerTo>
+<item key="3D871CE4-5F87-15B7-CFAF-FD6527F12C08" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID" id="D3B0EAE5-0D69-C5C5-3D20-EA26B96AA353">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 20:03:27 UTC</createdTime>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<engineerTo>
+<item key="3D871CE4-5F87-15B7-CFAF-FD6527F12C08" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NOME" id="B6426ECB-F83B-89DA-6F02-313F67477C2B">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 20:03:38 UTC</createdTime>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<engineerTo>
+<item key="3D871CE4-5F87-15B7-CFAF-FD6527F12C08" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="CA379E5C-38BC-F08A-757C-5F2A7C01B6FB" name="TCI_CATEGORIA PK">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 20:03:36 UTC</createdTime>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="3D871CE4-5F87-15B7-CFAF-FD6527F12C08" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D3B0EAE5-0D69-C5C5-3D20-EA26B96AA353</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="HAS_ITEM" directorySegmentName="seg_0" id="4A458480-B765-AD0E-5DEA-BEC99CAED741">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:37:48 UTC</createdTime>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<engineerTo>
+<item key="3D871CE4-5F87-15B7-CFAF-FD6527F12C08" value="true"/>
+</engineerTo>
+<sourcePk>FA260AB2-16CB-92F9-2623-EDD0098A4240</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>CEBA262B-3695-574C-3698-9FF762506D2C</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>A48E4BBA-E265-0693-7A15-44528E5F1CDE</targetEntity>
+<transferable>true</transferable>
+<deleteRule>CASCADE</deleteRule>
+</Relation>

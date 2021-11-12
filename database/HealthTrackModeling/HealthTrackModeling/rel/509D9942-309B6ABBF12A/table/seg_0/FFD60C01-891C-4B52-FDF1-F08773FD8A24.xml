@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FFD60C01-891C-4B52-FDF1-F08773FD8A24" name="THT_ADMIN_002">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:00:27 UTC</createdTime>
+<generatorID>794F7FFE-13DC-7AEC-DD4A-993E7D5F4E0D</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="02F8DD1A-A441-5962-0733-B3BA2F55C10B">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:00:27 UTC</createdTime>
+<generatorID>65E7C309-B57C-CB8B-F638-C74570B0D3CD</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="9A8D9659-4737-840E-6773-55B5DF598AB0">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:00:27 UTC</createdTime>
+<generatorID>E51EFDA2-B87D-0D10-314B-6A89F26FA207</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="E69F1699-0790-32C2-819F-5A4B50958281">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:00:27 UTC</createdTime>
+<generatorID>5A06DC13-C1F2-4970-7CB9-858F1C05163B</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="login" id="8B48A0F3-8F57-A69F-1EFD-28FE84C7F4B9">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:00:27 UTC</createdTime>
+<generatorID>022B5350-909B-D417-3826-44A4E3836593</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pass" id="81703110-21C9-6710-7DC8-EB05EF3F74F5">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:00:27 UTC</createdTime>
+<generatorID>DAF5414C-3FAF-A585-548E-EBAFFFD30161</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="active" id="E84CACF2-1450-F29D-3970-ACDCD9EAF9DE">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:00:27 UTC</createdTime>
+<generatorID>CB654422-C1CE-D901-6F40-12FA745CEC43</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="photo" id="BB1EE895-C349-F849-292C-2BDF58CBFC73">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:00:27 UTC</createdTime>
+<generatorID>6D1BD669-F54D-2187-5262-96A6D1F276DF</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="82CD97BC-758A-33EB-606D-9012B9BE446E" name="THT_ADMIN_002_PK">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:00:27 UTC</createdTime>
+<generatorID>54233A0D-85B0-974E-4B65-74F164E459D5</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="02F8DD1A-A441-5962-0733-B3BA2F55C10B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

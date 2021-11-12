@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0C5142FB-B5C9-5C78-C1F5-E8C52FCFE485" name="THT_ACTIVITY_007">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:00:27 UTC</createdTime>
+<generatorID>E895E8D9-6916-C22B-2114-26E3157B03C4</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="656DB785-ABF9-2BA5-A963-C1771FBAB3A2">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:00:27 UTC</createdTime>
+<generatorID>DB40E1F2-8395-B225-EDD2-C5BA3078826C</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="32F022B7-483C-0373-F9EF-816F8530BFD5">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:00:27 UTC</createdTime>
+<generatorID>43079812-3CEF-ACF5-0B3C-C23A46F64BD5</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="72E62215-CCC9-368C-2D3D-67A004E16775" name="THT_ACTIVITY_007_PK">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:00:27 UTC</createdTime>
+<generatorID>635FFEE8-AA81-84B7-D12E-2E67B20CC04C</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="656DB785-ABF9-2BA5-A963-C1771FBAB3A2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D28EA0BD-838B-11C1-9BEF-529F11E2DF7A" name="THT_USWEIGHT_011">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:45:01 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="19FF4C91-F00F-EA58-D102-910BEC94C0EA">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:45:13 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="weight" id="FBA2A02E-D5BE-B369-70DA-6EEF4E12AE21">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:45:24 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="height" id="ACA4299E-515A-332A-F914-E92D13151F28">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:45:38 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,3,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="date" id="79CE09F2-7674-34B7-D62D-31027541B026">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:45:56 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="userId" id="68A72DC4-80DA-A027-A1AE-556D1064E431">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 03:19:15 UTC</createdTime>
+<generatorID>58AC41B3-B271-D938-01B2-087358AC13C0</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<referedAttribute>1FC8BC7E-257A-70B5-A177-E165A50701CD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<preferredAbbreviation>userId</preferredAbbreviation>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="CAE16620-7BB5-A8A1-4A46-70B4F2C78672" name="THT_USWEIGHT_PK">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:45:21 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>19FF4C91-F00F-EA58-D102-910BEC94C0EA</newElementsIDs>
+<usedAttributes>
+<attributeRef>19FF4C91-F00F-EA58-D102-910BEC94C0EA</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,136 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E8CD33B4-B5FF-FD47-2740-9D20483D3116" name="TCI_EMPRESA">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:40:05 UTC</createdTime>
+<generatorID>644C9C60-CB27-CC05-27A4-30B34BA98C96</generatorID>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="CB1AC163-7A9A-30C7-8FE0-0CD3E4C63D78">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:40:05 UTC</createdTime>
+<generatorID>7F2A1D11-090C-BB28-4734-19BD137C0B54</generatorID>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOME" id="A3940340-58D2-7CBD-FA07-917E2069C08E">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:40:05 UTC</createdTime>
+<generatorID>D467C94F-8544-AA09-274C-5A40619A0176</generatorID>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCRICAO" id="E703C7C6-DD65-EE5A-BD78-27887F8D0FCA">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:40:05 UTC</createdTime>
+<generatorID>35824987-9EF4-EE9C-689E-C9596FB844B9</generatorID>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1000</dataTypeSize>
+<ownDataTypeParameters>1000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CRIADOEM" id="8A371061-B6DE-42AC-B539-4D00D786CE9E">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:40:05 UTC</createdTime>
+<generatorID>7A612313-9CAC-6834-F3A3-261A0B873031</generatorID>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PEDIDOMIN" id="73AFC9D3-CAD5-A078-1CED-9B0015242F16">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:40:05 UTC</createdTime>
+<generatorID>C98EA76D-5D58-9C09-29DE-52EF519239CF</generatorID>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LOGO" id="72581C08-8993-9EC7-82AE-0A75CC9EC146">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:40:05 UTC</createdTime>
+<generatorID>DC443AB6-093D-6761-5138-08AF9AC70EF6</generatorID>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="INFO" id="492FA7FF-95FD-1E1D-6B6B-8518699842C4">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:40:05 UTC</createdTime>
+<generatorID>80FB0038-31B3-AADA-51BF-F052612CC7AC</generatorID>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1000</dataTypeSize>
+<ownDataTypeParameters>1000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TCI_PLANO_ID" id="F1809AFD-8390-B25F-103C-EB506135B0E0">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:40:05 UTC</createdTime>
+<generatorID>32644BE7-7529-7B28-4CE8-C65580C98C64</generatorID>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2C56C111-74B1-6968-3CD5-BEA19CE8D512" referredColumn="73904C56-E12F-32FC-E498-F194BDFFEC50"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BD22E2B5-F5D7-68C5-5246-74BB9AC71B50" name="TCI_EMPRESA_PK">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:40:05 UTC</createdTime>
+<generatorID>86814832-66C1-C203-5209-E04746CCF249</generatorID>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CB1AC163-7A9A-30C7-8FE0-0CD3E4C63D78"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="30E63E70-2EE9-BD1E-235C-CFF3B4ACFD88" name="TCI_EMPRESA_TCI_PLANO_FK">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:40:05 UTC</createdTime>
+<generatorID>753F2E01-DE5B-F917-A355-0A971F6904C4</generatorID>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F1809AFD-8390-B25F-103C-EB506135B0E0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

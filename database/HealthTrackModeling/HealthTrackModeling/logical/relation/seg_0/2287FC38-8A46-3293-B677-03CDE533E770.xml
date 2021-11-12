@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="hasPressure" directorySegmentName="seg_0" id="2287FC38-8A46-3293-B677-03CDE533E770">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 03:17:46 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<sourcePk>12880841-0166-6B89-9E84-1F94F296EC0B</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>A89C66CF-1A96-99DA-BED0-F98F83BF1E1F</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>4C5DB420-0C7F-2099-AF80-65633303FACF</targetEntity>
+<transferable>true</transferable>
+<deleteRule>CASCADE</deleteRule>
+</Relation>

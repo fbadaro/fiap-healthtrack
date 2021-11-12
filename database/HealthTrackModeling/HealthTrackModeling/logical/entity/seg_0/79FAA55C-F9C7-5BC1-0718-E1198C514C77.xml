@@ -1,0 +1,115 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="79FAA55C-F9C7-5BC1-0718-E1198C514C77" name="THT_USFEED_010">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:43:03 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="D84ACB5A-06B9-D4E3-0635-F2E59CF706CB">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:43:21 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="quantity" id="451ABF3F-C2A8-A024-76CB-84614FD3609E">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:43:36 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="type" id="23E699C9-5674-AD83-3C2A-A72778209E45">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:43:56 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="date" id="5E8AC02B-F840-1AAA-A220-15B7700B563F">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:44:12 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="feedId" id="7FCB4724-F9FF-AD0F-72DB-90A08D1CFC5B">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 04:02:46 UTC</createdTime>
+<generatorID>CC4B8449-BC34-F2F8-76A4-F44FA1055704</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<referedAttribute>119841FC-2E95-3C04-CDFC-708F73B8E882</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<preferredAbbreviation>feedId</preferredAbbreviation>
+</Attribute>
+<Attribute name="userId" id="63AAAEB0-C4D7-F075-7B54-0A15994DE75C">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 04:03:20 UTC</createdTime>
+<generatorID>347C5E4C-AB55-4E1C-976B-47C00A2B865D</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<referedAttribute>1FC8BC7E-257A-70B5-A177-E165A50701CD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<preferredAbbreviation>userId</preferredAbbreviation>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="781CCB87-63BC-5321-2C9A-C2DD3827910B" name="THT_USFEED_PK">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:43:31 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>D84ACB5A-06B9-D4E3-0635-F2E59CF706CB</newElementsIDs>
+<usedAttributes>
+<attributeRef>D84ACB5A-06B9-D4E3-0635-F2E59CF706CB</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

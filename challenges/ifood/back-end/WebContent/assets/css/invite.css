@@ -1,0 +1,78 @@
+body{
+  color: #727272;
+}
+
+.lista-itens{
+  text-align: center;
+  display: inline-block;
+  margin:auto;
+  color:#727272;
+}
+
+.lista-itens p{
+  margin-bottom: 0;
+}
+
+.lista-nome-restaurante{
+  text-align: left;
+}
+
+
+.lista-itens svg{
+  color: #A32A29;
+}
+
+.lista-header{
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.invite-list{
+  margin: 60px auto;
+}
+
+.overview-invites{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.invite-card{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: auto;
+}
+
+.card{
+  margin-top: 15px;
+}
+
+.card-body, .card-footer{
+  padding: 10px 30px 10px 15px;
+  text-align: left;
+}
+
+.card-header{
+  background-color: #d93837;
+  color: #ffffff;
+}
+
+
+@media(max-width: 767.98px){
+  body{
+    font-size: 0.9rem;
+  }
+
+  .lista-header{
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .invite-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+  }
+
+}

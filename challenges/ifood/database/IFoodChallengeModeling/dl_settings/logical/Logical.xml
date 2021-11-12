@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="737C96E4-B8B6-19DA-D3EA-575C66A2FF8D" mainViewID="1A7A64A2-4CED-D935-217A-4E807ABF4F6D">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 19:58:51 UTC</createdTime>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

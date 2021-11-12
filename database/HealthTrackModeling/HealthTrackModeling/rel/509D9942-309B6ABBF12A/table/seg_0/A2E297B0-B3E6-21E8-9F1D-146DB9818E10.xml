@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A2E297B0-B3E6-21E8-9F1D-146DB9818E10" name="THT_USPRESSURE_012">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:00:27 UTC</createdTime>
+<generatorID>4C5DB420-0C7F-2099-AF80-65633303FACF</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="6FB48AA3-913D-49F3-420F-E646596D35FD">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:00:27 UTC</createdTime>
+<generatorID>8017B6CD-ECCE-81E3-B7D1-035FFE16C895</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="diastolicPresssure" id="159E17D5-024F-5DBA-A245-B8AC856431B6">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:00:27 UTC</createdTime>
+<generatorID>D1D025E1-2B8D-89E9-0F9D-8592B7D42206</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="systolicPressure" id="737A7450-6445-D98B-FC1F-699409CFCD38">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:00:27 UTC</createdTime>
+<generatorID>020617B8-ECED-ABD4-2F1F-308EC232F274</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="date" id="9DC09850-9C70-72EE-5BB4-1093327B9F23">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:00:27 UTC</createdTime>
+<generatorID>AE7FFA38-AFE1-7403-468A-EFF52D271D57</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="userId" id="DA94AAAC-E86C-3B4F-1FAF-5450E1D84C70">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 03:21:32 UTC</createdTime>
+<generatorID>A59B6325-9626-29C9-01C3-ADE246DB2656</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DBE83810-5212-3399-6B93-C3F78E50F596" referredColumn="4BD47169-F1E0-854B-5482-853B7EB2EE9C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7BAD31D9-9F46-0E11-CCA6-BEC669751C06" name="THT_USPRESSURE_012_PK">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:00:27 UTC</createdTime>
+<generatorID>A22EC6B9-32EE-98BF-E519-A384D61531CF</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6FB48AA3-913D-49F3-420F-E646596D35FD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="966118E2-863A-C431-AFED-54366C93C3FC" name="THT_USPRESSURE_THT_USER_FK">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 03:21:32 UTC</createdTime>
+<generatorID>2287FC38-8A46-3293-B677-03CDE533E770</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DA94AAAC-E86C-3B4F-1FAF-5450E1D84C70"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

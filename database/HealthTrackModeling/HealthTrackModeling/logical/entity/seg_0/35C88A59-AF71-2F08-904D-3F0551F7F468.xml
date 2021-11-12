@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="35C88A59-AF71-2F08-904D-3F0551F7F468" name="THT_USACTIVITY_009">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:40:42 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="46A3BD6E-563B-32C4-D531-B44EA3707BA1">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:41:32 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="activityDuration" id="BF207FA2-7CA7-AA7B-AC1E-FEFBE081A863">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:41:50 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="date" id="175C8E47-E80C-0445-8725-21EEE6B2DC8E">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:42:08 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="activityId" id="DF0048F6-DA5E-8A55-2C8A-5FE9F4110F97">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:10:16 UTC</createdTime>
+<generatorID>69F29610-9283-7601-949E-93EE17DA3E7A</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<referedAttribute>DB40E1F2-8395-B225-EDD2-C5BA3078826C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<preferredAbbreviation>activityId</preferredAbbreviation>
+</Attribute>
+<Attribute name="userId" id="276F155C-6A75-F164-5FC2-86FF0F95592F">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:11:49 UTC</createdTime>
+<generatorID>94CBC5FE-68F0-5F8E-0BFC-4DF8086CECB7</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<referedAttribute>1FC8BC7E-257A-70B5-A177-E165A50701CD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<preferredAbbreviation>userId</preferredAbbreviation>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A0B71051-F962-C88C-6E10-607ED9CC5B7F" name="THT_USACTIVITY_PK">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 01:41:48 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>46A3BD6E-563B-32C4-D531-B44EA3707BA1</newElementsIDs>
+<usedAttributes>
+<attributeRef>46A3BD6E-563B-32C4-D531-B44EA3707BA1</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

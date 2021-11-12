@@ -1,0 +1,34 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="TCI_EMPRESACAT" directorySegmentName="seg_0" id="74034D98-F7A4-F1F2-A57E-F1CABF330ACD">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:38:04 UTC</createdTime>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<engineerTo>
+<item key="3D871CE4-5F87-15B7-CFAF-FD6527F12C08" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>644C9C60-CB27-CC05-27A4-30B34BA98C96</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>D096DAE5-A11E-98C0-B0B7-7C5BEDD36FF3</targetEntity>
+<transferable>true</transferable>
+<deleteRule>SET NULL</deleteRule>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<attribute name="NOME" id="AAB0738A-A975-3E3E-A685-EE92E2E57F91">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-30 21:38:19 UTC</createdTime>
+<ownerDesignName>IFoodChallengeModeling</ownerDesignName>
+<engineerTo>
+<item key="3D871CE4-5F87-15B7-CFAF-FD6527F12C08" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</attribute>
+</attributes>
+</Relation>

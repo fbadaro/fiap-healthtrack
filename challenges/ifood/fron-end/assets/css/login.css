@@ -1,0 +1,79 @@
+/************* LOGIN STYLE *************/
+
+.ifd-login-wrapper {
+    background: #ea2f3c url(../images/bg-login.png) no-repeat scroll right bottom;
+    position: relative;
+}
+
+.ifd-login-wrapper.nutri {
+  background: #f4d761 url(../images/bg-login-nutri.png) no-repeat scroll right bottom;
+  background-size: 50%;
+  position: relative;
+}
+
+.ifd-login-auth-wrapper {
+  position: relative;
+}
+
+.disclaimer {  
+  top: 15%;
+  position: absolute;
+  left: 5%;
+  padding: 40px;
+  width: 50%;
+}
+
+.disclaimer h1 {
+  font-weight: bolder;
+  font-size: 2.5em;
+}
+
+.disclaimer p {
+  font-size: 1.5em;
+}
+
+.disclaimer h1,
+.disclaimer p {
+  color: #ffffff;
+}
+
+.ifd-login-wrapper.nutri .disclaimer h1, 
+.ifd-login-wrapper.nutri .disclaimer p {
+  color: #b2414a !important;
+}
+
+.ifd-login-wrapper.nutri .btn-outline-light {  
+  border-color: #b2414a;
+  color: #b2414a;
+}
+
+.disclaimer .btn {
+  margin-top: 30px;
+}
+
+.ifd-login-auth {
+  margin: 0 auto;
+  position: relative !important;
+  top: 50% !important;
+  left: 0 !important;
+  transform: translateY(-60%) !important;
+  width: 70%;
+}
+
+.ifd-login-auth .logo {
+  background: transparent url(../images/logo-restaurante.svg) no-repeat scroll center center;  
+  background-size: contain;
+  display: block;
+  text-indent: -9999em;  
+  height: 80px;
+  margin: 20px auto;
+}
+
+.ifd-login-auth .logo.nutri {
+  background: transparent url(../images/logo-nutri.svg) no-repeat scroll center center;  
+  background-size: contain;  
+}
+
+.ifd-login-auth .form-group {
+  margin: 20px 0;
+}

@@ -1,0 +1,14 @@
+/************* CADASTRO STYLE *************/
+
+.ifd-form-wrapper .logo {
+  background: transparent url(../images/logo-restaurante.svg) no-repeat scroll center center;  
+  background-size: contain;
+  display: block;
+  text-indent: -9999em;  
+  height: 80px;
+  margin: 20px auto;
+}
+
+.ifd-form-wrapper label {
+  font-weight: bolder;
+}

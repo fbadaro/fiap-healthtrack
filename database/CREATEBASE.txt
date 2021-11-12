@@ -1,0 +1,134 @@
+CREATE TABLE THT_ACTIVITY_007 (
+    id    INTEGER NOT NULL,
+    name  VARCHAR2(50 CHAR) NOT NULL
+);
+ALTER TABLE THT_ACTIVITY_007 ADD CONSTRAINT THT_ACTIVITY_007_pk PRIMARY KEY ( id );
+
+CREATE TABLE THT_ADDRESS_005 (
+    id         INTEGER NOT NULL,
+    street     VARCHAR2(50 CHAR) NOT NULL,
+    "number"   INTEGER NOT NULL,
+    city       VARCHAR2(50 CHAR) NOT NULL,
+    state      VARCHAR2(50 CHAR) NOT NULL,
+    principal  CHAR(1) NOT NULL,
+    zipcode    CHAR(8 CHAR) NOT NULL,
+    country    VARCHAR2(50 CHAR),
+    userid     INTEGER NOT NULL
+);
+ALTER TABLE THT_ADDRESS_005 ADD CONSTRAINT THT_ADDRESS_005_pk PRIMARY KEY ( id );
+
+CREATE TABLE tht_admin_002 (
+    id      INTEGER NOT NULL,
+    name    VARCHAR2(30 CHAR) NOT NULL,
+    email   VARCHAR2(20 CHAR) NOT NULL,
+    login   VARCHAR2(10 CHAR) NOT NULL,
+    pass    VARCHAR2(10 CHAR) NOT NULL,
+    active  CHAR(1) NOT NULL,
+    photo   BLOB
+);
+ALTER TABLE tht_admin_002 ADD CONSTRAINT tht_admin_002_pk PRIMARY KEY ( id );
+
+CREATE TABLE THT_FEED_008 (
+    id    INTEGER NOT NULL,
+    name  VARCHAR2(50 CHAR) NOT NULL
+);
+ALTER TABLE THT_FEED_008 ADD CONSTRAINT THT_FEED_008_pk PRIMARY KEY ( id );
+
+CREATE TABLE THT_SOCIAL_006 (
+    id             INTEGER NOT NULL,
+    url            VARCHAR2(50 CHAR) NOT NULL,
+    isintegrated   CHAR(1) NOT NULL,
+    isdefaultauth  CHAR(1) NOT NULL,
+    userid         INTEGER NOT NULL
+);
+ALTER TABLE THT_SOCIAL_006 ADD CONSTRAINT tht_social_pk PRIMARY KEY ( id );
+
+CREATE TABLE THT_USACTIVITY_009 (
+    id                INTEGER NOT NULL,
+    activityduration  DATE NOT NULL,
+    activitydate      DATE NOT NULL,
+    activityid        INTEGER NOT NULL,
+    userid            INTEGER NOT NULL
+);
+ALTER TABLE THT_USACTIVITY_009 ADD CONSTRAINT THT_USACTIVITY_009_pk PRIMARY KEY ( id );
+
+CREATE TABLE THT_USER_001 (
+    id        INTEGER NOT NULL,
+    name      VARCHAR2(30 CHAR) NOT NULL,
+    email     VARCHAR2(30 CHAR) NOT NULL,
+    login     VARCHAR2(10 CHAR) NOT NULL,
+    pass      VARCHAR2(10 CHAR) NOT NULL,
+    active    CHAR(1) NOT NULL,
+    photo     BLOB,
+    birthday  DATE,
+    weight    NUMBER,
+    height    NUMBER
+);
+ALTER TABLE THT_USER_001 ADD CONSTRAINT THT_USER_001_pk PRIMARY KEY ( id );
+
+CREATE TABLE THT_USFEED_010 (
+    id        INTEGER NOT NULL,
+    quantity  NUMBER NOT NULL,
+    type      INTEGER NOT NULL,
+    feeddate  DATE NOT NULL,
+    feedid    INTEGER NOT NULL,
+    userid    INTEGER NOT NULL
+);
+ALTER TABLE THT_USFEED_010 ADD CONSTRAINT THT_USFEED_010_pk PRIMARY KEY ( id );
+
+CREATE TABLE THT_USPRESSURE_012 (
+    id                  INTEGER NOT NULL,
+    diastolicpresssure  INTEGER NOT NULL,
+    systolicpressure    INTEGER NOT NULL,
+    pressuredate        DATE,
+    userid              INTEGER NOT NULL
+);
+ALTER TABLE THT_USPRESSURE_012 ADD CONSTRAINT THT_USPRESSURE_012_pk PRIMARY KEY ( id );
+
+CREATE TABLE THT_USWEIGHT_011 (
+    id          INTEGER NOT NULL,
+    weight      NUMBER NOT NULL,
+    height      NUMBER NOT NULL,
+    weightdate  DATE NOT NULL,
+    userid      INTEGER NOT NULL
+);
+ALTER TABLE THT_USWEIGHT_011 ADD CONSTRAINT THT_USWEIGHT_011_pk PRIMARY KEY ( id );
+
+ALTER TABLE THT_ADDRESS_005
+    ADD CONSTRAINT tht_address_tht_user_fk FOREIGN KEY ( userid )
+        REFERENCES THT_USER_001 ( id );
+
+ALTER TABLE THT_SOCIAL_006
+    ADD CONSTRAINT tht_social_tht_user_fk FOREIGN KEY ( userid )
+        REFERENCES THT_USER_001 ( id )
+            ON DELETE CASCADE;
+
+ALTER TABLE THT_USACTIVITY_009
+    ADD CONSTRAINT tht_usactivity_tht_activity_fk FOREIGN KEY ( activityid )
+        REFERENCES THT_ACTIVITY_007 ( id )
+            ON DELETE CASCADE;
+
+ALTER TABLE THT_USACTIVITY_009
+    ADD CONSTRAINT tht_usactivity_tht_user_fk FOREIGN KEY ( userid )
+        REFERENCES THT_USER_001 ( id )
+            ON DELETE CASCADE;
+ALTER TABLE THT_USFEED_010
+    ADD CONSTRAINT tht_usfeed_tht_feed_fk FOREIGN KEY ( feedid )
+        REFERENCES THT_FEED_008 ( id )
+            ON DELETE CASCADE;
+
+
+ALTER TABLE THT_USFEED_010
+    ADD CONSTRAINT tht_usfeed_tht_user_fk FOREIGN KEY ( userid )
+        REFERENCES THT_USER_001 ( id )
+            ON DELETE CASCADE;
+
+ALTER TABLE THT_USPRESSURE_012
+    ADD CONSTRAINT tht_uspressure_tht_user_fk FOREIGN KEY ( userid )
+        REFERENCES THT_USER_001 ( id )
+            ON DELETE CASCADE;
+
+ALTER TABLE THT_USWEIGHT_011
+    ADD CONSTRAINT tht_usweight_tht_user_fk FOREIGN KEY ( userid )
+        REFERENCES THT_USER_001 ( id )
+            ON DELETE CASCADE;

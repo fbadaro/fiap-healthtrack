@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="hasActivity" directorySegmentName="seg_0" id="69F29610-9283-7601-949E-93EE17DA3E7A">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:06:56 UTC</createdTime>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<engineerTo>
+<item key="509D9942-9FC8-EBC6-1758-309B6ABBF12A" value="true"/>
+</engineerTo>
+<sourcePk>635FFEE8-AA81-84B7-D12E-2E67B20CC04C</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>E895E8D9-6916-C22B-2114-26E3157B03C4</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>35C88A59-AF71-2F08-904D-3F0551F7F468</targetEntity>
+<transferable>true</transferable>
+<deleteRule>CASCADE</deleteRule>
+</Relation>

@@ -1,0 +1,138 @@
+/************* DASHBOARD STYLE *************/
+
+body {
+  background: #f9fbfd;
+}
+
+/************* MAIN STYLE *************/
+main {
+  height: 100vh;
+  margin-left: 80px;
+}
+
+.ht-welcome {
+  position: relative;
+}
+
+.ht-welcome p {
+  width: 60%;
+}
+
+.ht-welcome-banner {
+  position: absolute;
+  right: 0;
+  top: -80px;
+}
+
+.ht-card-wrapper {
+  margin-top: 40px;
+}
+
+.ht-card-wrapper h5 {
+  color: #504678;
+}
+
+.ht-card-wrapper h5 img {
+  margin-right: 10px;
+}
+
+.ht-card {
+  background: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #ededed;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  margin: 20px 0 60px;
+  height: 350px;
+  z-index: 1;
+  padding: 20px;
+  position: relative;
+}
+
+.ht-card .row {
+  height: 100%;
+}
+
+.ht-card-left {
+  border-right: 2px solid #ededed;
+}
+
+.ht-card-content-wrapper {
+  overflow: auto;
+  height: 290px;
+  box-sizing: border-box;
+  padding-right: 20px;
+}
+
+.ht-card-content:first-child {
+  margin-top: 0;
+}
+
+.ht-card-content {
+  margin-top: 40px;
+  position: relative;
+}
+
+.ht-card-content .ht-card-title {
+  font-weight: 900;
+  font-size: 0.75em;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+.ht-table {
+  color: #6b6b6b;
+  font-size: 0.85em;
+  width: 100%;
+}
+
+.ht-table thead th {
+  color: #504678;
+  border: none;
+}
+
+.ht-table th {
+  border-bottom: 1px dashed #5fe1ba;
+  padding: 5px 0 8px;
+}
+
+.ht-table td {
+  border-bottom: 1px dashed #5fe1ba;
+  padding: 5px 0 8px;
+}
+
+.ht-table .index {
+  background: #504678;
+  border-radius: 100%;
+  color: #ffffff;
+  display: inline-block;
+  height: 20px;
+  text-align: center;
+  width: 20px;
+}
+
+.ht-card-status {
+  clear: both;
+  overflow: auto;
+}
+
+.ht-card-status .status {  
+  color: #504678;
+  font-size: 3.5em;
+  font-weight: 300;
+  float: left;
+}
+
+.ht-card-status .ico-smile-happy {
+  margin: 25px 20px;
+  height: 40px;  
+  width: 40px;
+}
+
+.ht-card-status .ico-smile-happy path {
+  fill: #5fe1ba;  
+}
+
+.ht-card-status-message {
+  clear: both;
+}

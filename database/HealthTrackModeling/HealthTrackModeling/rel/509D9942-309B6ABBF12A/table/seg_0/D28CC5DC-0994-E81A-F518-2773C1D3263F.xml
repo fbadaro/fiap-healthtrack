@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D28CC5DC-0994-E81A-F518-2773C1D3263F" name="THT_USWEIGHT_011">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:00:27 UTC</createdTime>
+<generatorID>D28EA0BD-838B-11C1-9BEF-529F11E2DF7A</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="0038BBFD-472E-0DF5-0A0C-4F2EB3DD1F0C">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:00:27 UTC</createdTime>
+<generatorID>19FF4C91-F00F-EA58-D102-910BEC94C0EA</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="weight" id="452201B4-6ED9-846E-7639-9DC1B8DEE664">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:00:27 UTC</createdTime>
+<generatorID>FBA2A02E-D5BE-B369-70DA-6EEF4E12AE21</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="height" id="D1F1A308-EB2F-4C23-1166-0D0EA14EA1F0">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:00:27 UTC</createdTime>
+<generatorID>ACA4299E-515A-332A-F914-E92D13151F28</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,3,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="date" id="4A4E1E4C-5B9B-68B6-3076-FF3004FD7C82">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:00:27 UTC</createdTime>
+<generatorID>79CE09F2-7674-34B7-D62D-31027541B026</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="userId" id="81694DC7-DA09-6CB5-FFBD-62B1B2A1B292">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 03:21:32 UTC</createdTime>
+<generatorID>68A72DC4-80DA-A027-A1AE-556D1064E431</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5D97E13E-9AFF-0966-24E5-83715107D00E" referredColumn="4BD47169-F1E0-854B-5482-853B7EB2EE9C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="642A4A68-9FDC-7884-FA9B-0176EBE7EC61" name="THT_USWEIGHT_011_PK">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 02:00:27 UTC</createdTime>
+<generatorID>CAE16620-7BB5-A8A1-4A46-70B4F2C78672</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0038BBFD-472E-0DF5-0A0C-4F2EB3DD1F0C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AFAF85D5-BBEA-2D93-1C45-FFCE9C5CF20B" name="THT_USWEIGHT_THT_USER_FK">
+<createdBy>fbadaro</createdBy>
+<createdTime>2021-10-05 03:21:32 UTC</createdTime>
+<generatorID>58AC41B3-B271-D938-01B2-087358AC13C0</generatorID>
+<ownerDesignName>HealthTrackModeling</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="81694DC7-DA09-6CB5-FFBD-62B1B2A1B292"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

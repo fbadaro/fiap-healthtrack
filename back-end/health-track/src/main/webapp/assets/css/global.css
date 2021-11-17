@@ -1,0 +1,107 @@
+/************* NAV STYLE *************/
+
+.ht-hamburguer .bi-list {
+  fill: #504678;
+  height: 24px;
+  width: 24px;
+  position: fixed;
+  top: 30px;
+  left: 20px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: #504678;
+  display: block;
+  font-family: "Open Sans";
+  font-weight: 900;
+  padding: 5px 0;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #5fe1ba;
+}
+
+nav ul li a img {
+  padding-right: 10px;
+  position: relative;
+}
+
+nav ul li a:hover img {
+  left: 2px;
+}
+
+/* nav {
+  background: #ffffff;
+  border-right: 2px solid #5fe1ba;
+  float: left;
+  height: 100vh;
+  padding: 15px 0;
+  position: fixed;
+  width: 80px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;  
+}
+
+nav ul li {  
+  height: 60px;
+  position: relative;
+  text-align: center;  
+}
+
+nav ul li a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+
+/************* HEADER STYLE *************/
+
+header {
+  padding: 30px 0;
+  overflow: auto;
+}
+
+.ht-header-logo {
+  float: left;
+}
+
+.ht-header-logo h6 {
+  font-weight: 800;
+  margin: 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.ht-header-logo .bi-arrow-left-circle {
+  position: relative;
+  top: -2px;
+}
+
+.ht-header-userprofile {
+  float: right;
+}
+
+/************* FOOTER STYLE *************/
+footer {
+  background: #ffffff;
+  border-top: 1px solid #ededed;
+  padding: 20px 0 10px;
+  margin-top: 100px;
+}
+
+footer p {
+  text-align: center;
+  font-size: 0.75em;
+}

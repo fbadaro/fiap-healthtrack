@@ -1,0 +1,1 @@
+<script src="assets/vendors/bootstrap-5.0.1-dist/js/bootstrap.min.js"></script>

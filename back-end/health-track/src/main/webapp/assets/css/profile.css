@@ -1,0 +1,12 @@
+/************* PROFILE  STYLE *************/
+body {
+  background: #f9fbfd;
+}
+
+.ht-form-profile h5:first-child {
+  margin-top: 0;
+}
+
+.ht-form-profile h5 {
+  margin-top: 60px;
+}

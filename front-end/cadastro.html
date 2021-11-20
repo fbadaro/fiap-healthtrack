@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro Alimentação - Health Track</title>
+
+  <link rel="shortcut icon" href="assets/images/favicon-20210622072946109.ico" type="image/x-icon">
+  <link rel="icon" href="assets/images/favicon-20210622072946109.ico" type="image/x-icon">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="assets/vendors/bootstrap-5.0.1-dist/css/bootstrap.min.css">
+
+  <!-- Main -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+
+<body>
+  <div class="ht-dashboard">    
+    <main>
+      <header class="container">
+        <div class="ht-header-logo">
+          <a href="dash.html" title="Health Track" class="ht-logo-letter">
+            <img src="assets/images/logo-letters.svg" alt="">
+          </a>
+          <h6>Cadastro</h6>
+        </div>
+      </header>
+
+      <div class="container">
+        <form class="row g-4">
+          <h5>Cadastro de Usuario</h5>
+          <hr>          
+          <div class="col-md-6">
+            <label for="txtName" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="txtName" name="txtName" />
+          </div>
+          <div class="col-md-6">
+            <label for="txtEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="txtEmail" name="txtEmail" />
+          </div>
+          <div class="col-md-6">
+            <label for="txtLogin" class="form-label">Login</label>
+            <input type="text" class="form-control" id="txtLogin" name="txtLogin" />
+          </div>
+          <div class="col-md-6">
+            <label for="txtPass" class="form-label">Senha</label>
+            <input type="email" class="form-control" id="txtPass" name="txtPass" />
+          </div>
+
+          <h5>Informacoes Pessoais</h5>
+
+          <div class="col-md-4">
+            <label for="txtBirthday" class="form-label">Data Nasc</label>
+            <input type="date" class="form-control" id="txtBirthday" name="txtBirthday" />
+          </div>
+          <div class="col-md-4">
+            <label for="txtHeight" class="form-label">Altura</label>
+            <input type="email" class="form-control" id="txtHeight" name="txtHeight" />
+          </div>
+          <div class="col-md-4">
+            <label for="txtWeight" class="form-label">Peso</label>
+            <input type="email" class="form-control" id="txtWeight" name="txtWeight" />
+          </div>
+
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary float-end">Cadastrar</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/vendors/bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

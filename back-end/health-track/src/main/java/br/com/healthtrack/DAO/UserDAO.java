@@ -21,14 +21,17 @@ public class UserDAO {
 		try {
 			
 			var query = String.format("INSERT INTO %s (ID, NAME, EMAIL, LOGIN, PASS, ACTIVE, PHOTO, BIRTHDAY, WEIGHT, HEIGHT) "
-					+ "VALUES (%s, ?, ?, ?, ?, 'A', NULL, NULL, NULL, NULL)", tableName, tableSequenceName); 
+					+ "VALUES (%s, ?, ?, ?, ?, 'A', NULL, ?, ?, ?)", tableName, tableSequenceName); 
 			
 			stmt = connection.GetConnection().prepareStatement(query);			
 			
 			stmt.setString(1, user.getName());	
 			stmt.setString(2, user.getEmail());	
 			stmt.setString(3, user.getLogin());	
-			stmt.setString(4, user.getPass());	
+			stmt.setString(4, user.getPass());				
+			stmt.setDate(5, java.sql.Date.valueOf(user.getBirthday()));	
+			stmt.setDouble(6, user.getWeight());	
+			stmt.setDouble(7, user.getHeight());	
 			
 			connection.ExecuteCommand(stmt);
 			

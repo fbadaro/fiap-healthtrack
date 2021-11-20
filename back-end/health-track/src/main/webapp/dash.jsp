@@ -28,7 +28,7 @@
 
       <div class="container">
         <div class="ht-welcome">
-          <h1 class="ht-title-style-1">Olá Camila da Silva</h1>
+          <h1 class="ht-title-style-1">Olá ${currentUser.name}</h1>
 
           <h6 class="bolder">Dica do dia - Informações sobre COVID19 - 26/01/2021</h6>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec rhoncus nulla. Interdum et malesuada

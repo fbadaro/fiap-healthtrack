@@ -23,6 +23,11 @@ public final class User extends Person{
 	private double height;
 	
 	/**
+	 * Peso do usuário
+	 */
+	private double weight;
+	
+	/**
 	 * Lista de amigos do usuário
 	 */
 	private List<UserFriend> userFriend = new ArrayList<UserFriend>();
@@ -58,11 +63,28 @@ public final class User extends Person{
 		this.name = name;
 		this.email = email;
 		this.login = login;
-		setPass(pass);;
+		
+		setPass(pass);
 		
 		ValidateUser();			
 	}
 
+	public User(String name, String email, String login, String pass, Double height, Double weight, LocalDate birthday) {
+		
+		this.name = name;
+		this.email = email;
+		this.login = login;
+		this.height = height;
+		this.weight = weight;
+		this.birthday = birthday;
+		
+		setPass(pass);
+		
+		ValidateUser();
+		
+		System.out.println("Usuario criado com sucesso!");	
+	}
+	
 	public User(String name, String email, String login, String pass) {
 		
 		this.name = name;
@@ -164,6 +186,22 @@ public final class User extends Person{
 	 */
 	public void setHeight(double height) {
 		this.height = height;
+	}
+	
+	/**
+	 * Método para retorno da altura 
+	 * @return altura
+	 */
+	public double getWeight() {
+		return weight;
+	}
+	
+	/**
+	 * Método para alterar altura
+	 * @param height é a altura a ira alterar
+	 */
+	public void setWeight(double weight) {
+		this.weight = weight;
 	}
 	
 	/**

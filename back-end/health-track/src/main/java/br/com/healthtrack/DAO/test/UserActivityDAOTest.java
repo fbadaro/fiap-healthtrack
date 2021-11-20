@@ -23,7 +23,7 @@ public class UserActivityDAOTest {
 		var userActivities = new ArrayList<UserActivity>();
 		
 		for(var item : activitiesDatabase) {
-			userActivities.add(new UserActivity(userDatabase, item, LocalDate.now(), LocalDate.now()));					
+			userActivities.add(new UserActivity(userDatabase, item, 60, LocalDate.now()));					
 		}
 		
 		userActivityDAO.InsertRange(userActivities);
@@ -33,6 +33,7 @@ public class UserActivityDAOTest {
 		
 		for(var item : userActivitiesDatabase) {
 			System.out.println(item.getActivity().getName());
+			System.out.println(item.getActivityDuration());
 		}
 	}
 

@@ -92,13 +92,13 @@ public class Entrypoint {
 		// User Activity
 		System.out.println("****************** METODOS USER ACTIVITY ******************");
 		
-		var userActivity1 = new UserActivity(user, activity1, LocalDate.now(), LocalDate.now());
+		var userActivity1 = new UserActivity(user, activity1, 44, LocalDate.now());
 		user.setUserActivity(userActivity1);
 		
-		var userActivity2 = new UserActivity(user, activity2, LocalDate.now(), LocalDate.now());
+		var userActivity2 = new UserActivity(user, activity2, 50, LocalDate.now());
 		user.setUserActivity(userActivity2);
 		
-		var userActivity3 = new UserActivity(user, activity3, LocalDate.now(), LocalDate.now());
+		var userActivity3 = new UserActivity(user, activity3, 60, LocalDate.now());
 		user.setUserActivity(userActivity3);
 		
 		// Listando Atividades do Usuario

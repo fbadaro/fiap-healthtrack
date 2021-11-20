@@ -37,8 +37,8 @@ public class ConnectionManager {
 			String host = "jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL";
 			String user = "RM89126";
 			String pass = "090495";
-			//this.connection = DriverManager.getConnection(host, user, pass);
-			this.connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system", "oracle");
+			this.connection = DriverManager.getConnection(host, user, pass);
+			//this.connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system", "oracle");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

@@ -28,7 +28,7 @@ public class UserActivityDAO {
 				
 				stmt = connection.GetConnection().prepareStatement(query);			
 				
-				stmt.setDate(1, java.sql.Date.valueOf(userAct.getActivityDuration()));	
+				stmt.setInt(1, userAct.getActivityDuration());	
 				stmt.setDate(2, java.sql.Date.valueOf(userAct.getDate()));	
 				stmt.setInt(3, userAct.getActivity().getId());	
 				stmt.setInt(4, userAct.getUser().getId());	
@@ -88,7 +88,7 @@ public class UserActivityDAO {
 			while(resultSet.next()) {
 								
 				//var id = resultSet.getInt("ID");
-				var activityDuration = resultSet.getDate("ACTIVITYDURATION");
+				var activityDuration = resultSet.getInt("ACTIVITYDURATION");
 				var activityDate  = resultSet.getDate("ACTIVITYDATE");
 				var userId = resultSet.getInt("USERID");
 				var activityId = resultSet.getInt("ACTIVITYID");
@@ -100,7 +100,7 @@ public class UserActivityDAO {
 				UserActivity userActivity = new UserActivity(
 						user, 
 						activity, 
-						activityDuration.toLocalDate(), 
+						activityDuration, 
 						activityDate.toLocalDate()
 						);
 				

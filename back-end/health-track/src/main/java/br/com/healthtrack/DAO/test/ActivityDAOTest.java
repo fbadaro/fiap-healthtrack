@@ -33,6 +33,7 @@ public class ActivityDAOTest {
 		
 		for(var item : activitiesDatabase) {
 			System.out.println(item.getName());
+			System.out.println(item.getId());
 		}
 	}
 }

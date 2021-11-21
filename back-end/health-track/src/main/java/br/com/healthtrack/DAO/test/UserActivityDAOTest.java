@@ -18,15 +18,15 @@ public class UserActivityDAOTest {
 		UserDAO userDAO = DAOFactory.getUserDAO();		
 		
 		// INSERT
-		var activitiesDatabase = activityDAO.ListAll();		
-		var userDatabase = userDAO.GetById(1);		
-		var userActivities = new ArrayList<UserActivity>();
-		
-		for(var item : activitiesDatabase) {
-			userActivities.add(new UserActivity(userDatabase, item, 60, LocalDate.now()));					
-		}
-		
-		userActivityDAO.InsertRange(userActivities);
+//		var activitiesDatabase = activityDAO.ListAll();		
+//		var userDatabase = userDAO.GetById(1);		
+//		var userActivities = new ArrayList<UserActivity>();
+//		
+//		for(var item : activitiesDatabase) {
+//			userActivities.add(new UserActivity(userDatabase, item, 60, LocalDate.now()));					
+//		}
+//		
+//		userActivityDAO.InsertRange(userActivities);
 		
 		// LIST
 		var userActivitiesDatabase = userActivityDAO.ListAll();

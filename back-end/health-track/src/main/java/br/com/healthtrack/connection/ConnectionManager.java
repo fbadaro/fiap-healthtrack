@@ -35,10 +35,10 @@ public class ConnectionManager {
 	private void OpenConnection() {		
 		try {
 			String host = "jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL";
-			String user = "RM89126";
-			String pass = "090495";
-			//this.connection = DriverManager.getConnection(host, user, pass);
-			this.connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system", "oracle");
+			String user = "RM89238";
+			String pass = "070493";
+			this.connection = DriverManager.getConnection(host, user, pass);
+//			this.connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system", "oracle");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

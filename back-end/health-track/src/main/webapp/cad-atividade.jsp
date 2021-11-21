@@ -27,7 +27,7 @@
       <%@ include file="header.jsp"%>
 
       <div class="container">
-        <form class="row g-4">
+        <form class="row g-4" action="atividade" method="post">
           <h5>Cadastro de Atividade</h5>
           <hr>
 

@@ -104,7 +104,8 @@ public class UserActivity implements BaseRepository<UserActivity> {
 	public LocalDate getDate() {
 		return date;
 	}
-
+	
+	
 	@Override
 	public UserActivity Get(int id) {
 		System.out.println(String.format("Retornando a atividade do usuario %s da base com sucesso", this.activity.getName()));	

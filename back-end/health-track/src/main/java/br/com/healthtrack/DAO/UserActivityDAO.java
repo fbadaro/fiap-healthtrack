@@ -123,4 +123,15 @@ public class UserActivityDAO {
 		
 		return listaUserActivity;
 	}
+	
+	
+	public int durationToInt(String duration) {
+		String[] duracao = duration.split(":");
+		int n1 = Integer.parseInt(duracao[0]);
+		int n2 = Integer.parseInt(duracao[1]);
+		
+		return n1 * 60 + n2;
+		
+		
+	}
 }

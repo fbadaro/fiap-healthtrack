@@ -130,9 +130,9 @@ public class FeedDAO {
 			
 			if (resultSet.next() != false) {
 				feed = new Feed(
-						resultSet.getInt("ID"),
-						resultSet.getString("NAME")
-						);
+					resultSet.getInt("ID"),
+					resultSet.getString("NAME")
+				);
 			}
 		}
 		catch(SQLException e) {

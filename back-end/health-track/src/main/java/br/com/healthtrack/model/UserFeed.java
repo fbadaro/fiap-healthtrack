@@ -59,8 +59,7 @@ public class UserFeed implements BaseRepository<UserFeed> {
 	}
 
 	public UserFeed(User user, Feed feed, double quantity, int type, LocalDate date, double cal) {
-		
-		this.id = ((int) (Math.random() * (100 - 50) + 50));
+				
 		this.user = user;
 		this.feed = feed;
 		this.quantity = quantity;

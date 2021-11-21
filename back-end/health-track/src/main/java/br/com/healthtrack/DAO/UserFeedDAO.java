@@ -23,7 +23,7 @@ public class UserFeedDAO {
 			
 			if (ExistUser(userFeed.getUser().getId()) && ExistFeed(userFeed.getFeed().getId())) {
 				
-				var query = String.format("INSERT INTO %s (ID, QUANTITY, TYPE, FEEDDATE, FEEDID, USERID) "
+				var query = String.format("INSERT INTO %s (ID, QUANTITY, TYPE, FEEDDATE, FEEDID, USERID, CAL) "
 						+ "VALUES (%s, ?, ?, ?, ?, ?, ?)", tableName, tableSequenceName); 
 				
 				stmt = connection.GetConnection().prepareStatement(query);			

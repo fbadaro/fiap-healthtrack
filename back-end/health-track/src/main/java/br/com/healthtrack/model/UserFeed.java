@@ -31,6 +31,11 @@ public class UserFeed implements BaseRepository<UserFeed> {
 	private double quantity;
 	
 	/**
+	 * Calorias
+	 */
+	private double cal;
+	
+	/**
 	 * Tipo 
 	 */
 	private int type;
@@ -40,7 +45,7 @@ public class UserFeed implements BaseRepository<UserFeed> {
 	 */
 	private LocalDate date;
 	
-	public UserFeed(int id, User user, Feed feed, double quantity, int type, LocalDate date) {
+	public UserFeed(int id, User user, Feed feed, double quantity, int type, LocalDate date, double cal) {
 		
 		this.id = id;
 		this.user = user;
@@ -48,11 +53,12 @@ public class UserFeed implements BaseRepository<UserFeed> {
 		this.quantity = quantity;
 		this.type = type;
 		this.date = date;
+		this.cal = cal;
 		
 		ValidateUserFeed();
 	}
 
-	public UserFeed(User user, Feed feed, double quantity, int type, LocalDate date) {
+	public UserFeed(User user, Feed feed, double quantity, int type, LocalDate date, double cal) {
 		
 		this.id = ((int) (Math.random() * (100 - 50) + 50));
 		this.user = user;
@@ -60,6 +66,7 @@ public class UserFeed implements BaseRepository<UserFeed> {
 		this.quantity = quantity;
 		this.type = type;
 		this.date = date;
+		this.cal = cal;
 		
 		ValidateUserFeed();
 	}
@@ -103,6 +110,14 @@ public class UserFeed implements BaseRepository<UserFeed> {
 	 */
 	public double getQuantity() {
 		return quantity;
+	}
+	
+	/**
+	 * Método para retorno da caloria
+	 * @return quantidade
+	 */
+	public double getCal() {
+		return cal;
 	}
 	
 	/**

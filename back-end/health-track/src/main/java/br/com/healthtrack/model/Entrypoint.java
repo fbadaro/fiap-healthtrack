@@ -125,16 +125,16 @@ public class Entrypoint {
 		// User Feed
 		System.out.println("****************** METODOS USER FEED ******************");
 		
-		var userFeed1 = new UserFeed(user, feed1, 10.5, 1, LocalDate.now());
+		var userFeed1 = new UserFeed(user, feed1, 10.5, 1, LocalDate.now(), 1.0);
 		user.setUserFeed(userFeed1);	
 		
-		var userFeed2 = new UserFeed(user, feed2, 85.5, 1, LocalDate.now());
+		var userFeed2 = new UserFeed(user, feed2, 85.5, 1, LocalDate.now(), 1.0);
 		user.setUserFeed(userFeed2);	
 		
-		var userFeed3 = new UserFeed(user, feed3, 45.5, 2, LocalDate.now());
+		var userFeed3 = new UserFeed(user, feed3, 45.5, 2, LocalDate.now(), 1.0);
 		user.setUserFeed(userFeed3);	
 		
-		var userFeed4 = new UserFeed(user, feed4, 35.5, 2, LocalDate.now());
+		var userFeed4 = new UserFeed(user, feed4, 35.5, 2, LocalDate.now(), 1.0);
 		user.setUserFeed(userFeed4);	
 		
 		// Listando Alimentacao do Usuario

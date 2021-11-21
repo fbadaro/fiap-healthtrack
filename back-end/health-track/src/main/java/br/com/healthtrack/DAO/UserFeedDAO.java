@@ -24,7 +24,7 @@ public class UserFeedDAO {
 			if (ExistUser(userFeed.getUser().getId()) && ExistFeed(userFeed.getFeed().getId())) {
 				
 				var query = String.format("INSERT INTO %s (ID, QUANTITY, TYPE, FEEDDATE, FEEDID, USERID) "
-						+ "VALUES (%s, ?, ?, ?, ?, ?)", tableName, tableSequenceName); 
+						+ "VALUES (%s, ?, ?, ?, ?, ?, ?)", tableName, tableSequenceName); 
 				
 				stmt = connection.GetConnection().prepareStatement(query);			
 				
@@ -33,6 +33,7 @@ public class UserFeedDAO {
 				stmt.setDate(3, java.sql.Date.valueOf(userFeed.getDate()));	
 				stmt.setInt(4, userFeed.getFeed().getId());	
 				stmt.setInt(5, userFeed.getUser().getId());	
+				stmt.setDouble(6, userFeed.getCal());	
 				
 				connection.ExecuteCommand(stmt);
 				
@@ -94,6 +95,7 @@ public class UserFeedDAO {
 				var feedDate = resultSet.getDate("FEEDDATE");
 				var feedId = resultSet.getInt("FEEDID");
 				var userId = resultSet.getInt("USERID");
+				var cal = resultSet.getDouble("CAL");
 				
 				var user = new UserDAO().GetById(userId);
 				var feed = new FeedDAO().Get(feedId);
@@ -104,7 +106,8 @@ public class UserFeedDAO {
 					feed,
 					quantity,
 					type, 
-					feedDate.toLocalDate()
+					feedDate.toLocalDate(),
+					cal
 				);
 				
 				listaUserFeed.add(userFeed);

@@ -7,6 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.healthtrack.DAO.FeedDAO;
+import br.com.healthtrack.factory.DAOFactory;
+import br.com.healthtrack.model.User;
+
 /**
  * Servlet implementation class CadastroAlimentacaoController
  */
@@ -14,12 +18,15 @@ import javax.servlet.http.HttpServletResponse;
 public class CadastroAlimentacaoController extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
+	private FeedDAO feedDAO = null;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
     public CadastroAlimentacaoController() {
         super();        
+        
+        feedDAO = DAOFactory.getFeedDAO();
     }   
 
 	/**
@@ -29,9 +36,12 @@ public class CadastroAlimentacaoController extends HttpServlet {
 		System.out.println("Ola");
 		
 		// Usuario
-		// User currentUser = (User) request.getSession().getAttribute("currentUser");
+		User currentUser = (User) request.getSession().getAttribute("currentUser");
 		
 		var itemId = request.getParameter("item");
+		
+		var feedList = feedDAO.ListAll();
+		request.setAttribute("alimentos", feedList);			
 		
 		if (itemId != null) {
 			System.out.println("Item preenchido - alterar:" + itemId);

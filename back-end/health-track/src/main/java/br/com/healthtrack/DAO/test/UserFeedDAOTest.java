@@ -23,7 +23,7 @@ public class UserFeedDAOTest {
 		var userFeeds = new ArrayList<UserFeed>();
 		
 		for(var item : feedsDatabase) {
-			userFeeds.add(new UserFeed(userDatabase, item, 10, 2, LocalDate.now()));
+			userFeeds.add(new UserFeed(userDatabase, item, 10, 2, LocalDate.now(), 1.0));
 		}
 		
 		userFeedDAO.InsertRange(userFeeds);

@@ -83,7 +83,7 @@ public class CadEmpresaController extends HttpServlet {
 			String companyNome = request.getParameter("txtNome");
 			String companyTelefone = request.getParameter("txtTelefone");
 			String companyDescricao = request.getParameter("txtDescricao");
-			double companyPedidoMin = Double.parseDouble(request.getParameter("ddlEspecialidade"));
+			Double companyPedidoMin = Double.parseDouble(request.getParameter("ddlEspecialidade"));
 			String companyEntrega = request.getParameter("chkEntrega") == null ? "N" : "Y";			
 			
 			// Endereco

@@ -32,32 +32,41 @@
           <hr>
 
           <div class="col-md-12">
-            <label for="ddlAlimento" class="form-label">Informe o tipo de alimento</label>
-            <select id="ddlAlimento" class="form-select">
-              <option value="1">Arroz Branco</option>
-              <option value="2">Arroz Carreteiro</option>
-              <option value="3">Arroz a Grega</option>
-              <option value="4">Arroz com Legumes</option>
-            </select>
+            <label for="ddlFeed" class="form-label">Informe o tipo de alimento</label>            
+            <select id="ddlFeed" class="form-select" name="ddlFeed">
+              	<c:forEach var="feed" items="${feedList}">
+					<option value="${feed.id}">${feed.name}</option>
+				</c:forEach>
+            </select>            
           </div>
-          <div class="col-md-4">
+          
+          <div class="col-md-3">
             <label for="txtDate" class="form-label">Data</label>
-            <input type="date" class="form-control" id="txtDate">
+            <input type="date" class="form-control" id="txtDate" name="txtDate">
           </div>
-          <div class="col-md-4">
+          
+          <div class="col-md-3">
             <label for="txtQuantity" class="form-label">Quantidade</label>
-            <input type="text" class="form-control" id="txtTime">
+            <input type="number" class="form-control" id="txtTime" min="1" name="txtQuantity">
           </div>
-          <div class="col-md-4">
+          
+          <div class="col-md-3">
+            <label for="txtCal" class="form-label">Calorias</label>
+            <input type="number" class="form-control" id="txtCal" min="1" name="txtCal">
+          </div>
+          
+          <div class="col-md-3">
             <label for="ddlType" class="form-label">Tipo</label>
-            <select id="ddlType" class="form-select">
+            <select id="ddlType" class="form-select" name="ddlType" >
               <option value="1">Gramas</option>
               <option value="2">Quantidade</option>
             </select>
           </div>
+          
           <div class="col-12">
             <input type="submit" class="btn btn-primary float-end" value="Cadastrar" />
           </div>
+          
         </form>
       </div>
     </main>

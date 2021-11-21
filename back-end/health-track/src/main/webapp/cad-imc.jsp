@@ -28,9 +28,6 @@
 
       <div class="container">
         <form class="row g-4" action="imc" method="post">
-          <input type="hidden" value="edit" name="action">
-          <input type="hidden" value="${imc.id}" name="id">
-          
           
           <h5>Cadastro de IMC</h5>
           <hr>
@@ -46,17 +43,11 @@
           </div>
           <div class="col-md-6">
             <label for="txtDate" class="form-label">Data</label>
-            <input type="date" class="form-control" name="date" id="txtDate" value="${imc.weightdate}">
+            <input type="date" class="form-control" name="date" id="txtDate" value="${ imc.date }">
           </div>
           <div class="col-md-4">
             <label for="txtQuantity" class="form-label">&nbsp;</label>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="chkSaveHistory">
-              <label class="form-check-label" for="chkSaveHistory">
-                Adicionar no histórico?
-              </label>
-            </div>
-          </div>
+           </div>
           <div class="col-12">
             <button type="submit" class="btn btn-primary float-end">Cadastrar</button>
           </div>

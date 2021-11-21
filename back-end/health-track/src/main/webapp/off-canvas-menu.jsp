@@ -25,7 +25,7 @@
            </a>
          </li>
          <li>
-           <a href="cad-imc.jsp">
+            <a href="${ pageContext.request.contextPath }/imc">
              <img src="assets/images/ico-muscle.svg" alt=""> Cadastrar meu IMC
            </a>
          </li>

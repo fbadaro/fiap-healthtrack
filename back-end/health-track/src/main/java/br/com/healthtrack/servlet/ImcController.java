@@ -43,27 +43,21 @@ public class ImcController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		//User
-		//User currentUser = (User) request.getSession().getAttribute("currentUser");
+		User currentUser = (User) request.getSession().getAttribute("currentUser");
 		
-		//User mockado enquanto nao for passado no session no login
-		String action = request.getParameter("action");
-		
-		switch(action) {
-		case "list":
-				User currentUser= userDAO.GetById(1);		
+
+		int id = currentUser.getId();
+		UserWeight userweight = weightDAO.Get(id);
 				
-				//int id = Integer.parseInt(request.getParameter("codigo")); verificar se � isso ou se � pra pegar da session o id
-				int id = currentUser.getId();
-				UserWeight userweight = weightDAO.Get(id);
+		request.setAttribute("imc", userweight);
 				
-				request.setAttribute("imc", userweight);
-				request.getRequestDispatcher("cad-imc.jsp").forward(request, response);			
-			break;
+		System.out.println(userweight.getHeight());
+		request.getRequestDispatcher("cad-imc.jsp").forward(request, response);			
 		
 		}
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+	//}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -72,45 +66,22 @@ public class ImcController extends HttpServlet {
 		try {
 			
 			//User
-			//User currentUser = (User) request.getSession().getAttribute("currentUser");
-			
-			//User mockado enquanto nao for passado no session no login
-			User currentUser= userDAO.GetById(1);	
+			User currentUser = (User) request.getSession().getAttribute("currentUser");			
 			Double currentHeight = currentUser.getHeight();
 			System.out.println(currentHeight);
 			
+			String check = request.getParameter("check");
 			
-			if (currentHeight != 0.0 ) {
-				edit(request, response);
-			}
-			else {
-				insert(request, response);
-			}
+			System.out.println(check);
 			
-			//usar case se for mexer direto no jsp (outra alternativa)
+			insert(request, response);
 			
-//			String action = request.getParameter("action");
-//			
-//			switch(action) {
-//			case "insert":
-//				insert(request, response);
-//				break;
-//			case "edit":
+//			if (currentHeight != 0.0 && check == null ) {
 //				edit(request, response);
-//				break;
 //			}
-			
-//			
-//			if (currentHeight !=  height) {
-//				int userID = currentUser.getId();
-//				
-////				criar atualizar no userDAO
-////				criar atualizar no userWeightDAO
-//				User user = new User(userID, height);
-//				
-//				
+//			else {
+//				insert(request, response);
 //			}
-//			
 			
 			response.sendRedirect("dash.jsp");	
 		}catch(Exception e) {
@@ -124,16 +95,16 @@ public class ImcController extends HttpServlet {
 		
 		try{
 			//User
-			//User currentUser = (User) request.getSession().getAttribute("currentUser");
-			
-			//User mockado enquanto nao for passado no session no login
-			User currentUser= userDAO.GetById(1);	
+			User currentUser = (User) request.getSession().getAttribute("currentUser");
 			Double currentHeight = currentUser.getHeight();
 			
 			
 			double height = Double.parseDouble(request.getParameter("height"));
 			double weight = Double.parseDouble(request.getParameter("weight"));
 			LocalDate weightdate = LocalDate.parse(request.getParameter("date"));
+			String check = request.getParameter("check");
+			
+			System.out.println(check);
 			
 			//guardar na session o valor de weight para verificar se est� vazio ou n�o
 			HttpSession session = request.getSession();
@@ -153,19 +124,23 @@ public class ImcController extends HttpServlet {
 	private void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			//User
-			//User currentUser = (User) request.getSession().getAttribute("currentUser");
+			User currentUser = (User) request.getSession().getAttribute("currentUser");
+			//Double currentHeight = currentUser.getHeight();
 			
-			//User mockado enquanto nao for passado no session no login
-			User currentUser= userDAO.GetById(1);	
-			//Pegar peso do usu�rio logado
-			Double currentHeight = currentUser.getHeight();
+			int userid = currentUser.getId();
+			//UserWeight userweight = weightDAO.Get(userid);
 			
 			double height = Double.parseDouble(request.getParameter("height"));
 			double weight = Double.parseDouble(request.getParameter("weight"));
 			LocalDate weightdate = LocalDate.parse(request.getParameter("date"));
 			
+			UserWeight userweight = weightDAO.Get(userid);
+			userweight.setWeight(weight);
+			userweight.setHeight(height);
+			userweight.setDate(weightdate);
 			
-			UserWeight userweight = new UserWeight(0,currentUser, height, weight, weightdate);
+			
+			//UserWeight userweight = new UserWeight(0,currentUser, height, weight, weightdate);
 			
 			weightDAO.edit(userweight);
 			

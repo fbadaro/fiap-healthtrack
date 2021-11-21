@@ -27,7 +27,7 @@
       <%@ include file="header.jsp"%>
 
       <div class="container">
-        <form class="row g-4">
+        <form class="row g-4" action="cad-alimentacao" method="post">
           <h5>Cadastro Alimentação</h5>
           <hr>
 
@@ -56,7 +56,7 @@
             </select>
           </div>
           <div class="col-12">
-            <button type="submit" class="btn btn-primary float-end">Cadastrar</button>
+            <input type="submit" class="btn btn-primary float-end" value="Cadastrar" />
           </div>
         </form>
       </div>

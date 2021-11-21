@@ -20,7 +20,7 @@
            </a>
          </li>
          <li>
-           <a href="cad-alimentacao.jsp">
+           <a href="${ pageContext.request.contextPath }/cad-alimentacao">
              <img src="assets/images/ico-apple.svg" alt=""> Cadastrar Alimentação
            </a>
          </li>

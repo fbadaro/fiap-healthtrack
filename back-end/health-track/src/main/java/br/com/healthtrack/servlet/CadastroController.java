@@ -56,9 +56,11 @@ public class CadastroController extends HttpServlet {
 			Double userWeight = Double.parseDouble(request.getParameter("txtWeight"));
 			
 			var user = new User(userName, userEmail, userLogin, userPass, userHeight, userWeight, userBirthday);			
-			currentUserDAO.Insert(user);			
+			var createdUser = currentUserDAO.Insert(user);			
 			
-			request.getSession().setAttribute("currentUser", user);			
+			System.out.println(createdUser.getName());
+			
+			request.getSession().setAttribute("currentUser", createdUser);			
 			response.sendRedirect("dash.jsp");	
 		}
 		catch (Exception ex) {

@@ -10,36 +10,78 @@ import br.com.healthtrack.model.User;
 
 public class UserDAO {
 	
-	private String tableName = "THT_USER_001";
-	private String tableSequenceName = "USER_ID_SEQ.NEXtVAL";
+	private String tableName = "THT_USER_001";	
+	private String tableSequenceName = "USER_ID_SEQ.NEXTVAL";
 	
-	PreparedStatement stmt = null;	
+	PreparedStatement stmt = null;		
 	ConnectionManager connection = ConnectionManager.getInstance();
 	
-	public void Insert(User user) {
+	public User Insert(User user) {
+				
+		User createdUser = null;	
 		
 		try {
 			
 			var query = String.format("INSERT INTO %s (ID, NAME, EMAIL, LOGIN, PASS, ACTIVE, PHOTO, BIRTHDAY, WEIGHT, HEIGHT) "
-					+ "VALUES (%s, ?, ?, ?, ?, 'A', NULL, ?, ?, ?)", tableName, tableSequenceName); 
+					+ "VALUES (%s, ?, ?, ?, ?, 'A', NULL, ?, ?, ?)", tableName, tableSequenceName); 					
 			
-			stmt = connection.GetConnection().prepareStatement(query);			
+			stmt = connection.GetConnection().prepareStatement(query);				
 			
-			stmt.setString(1, user.getName());	
-			stmt.setString(2, user.getEmail());	
-			stmt.setString(3, user.getLogin());	
-			stmt.setString(4, user.getPass());				
-			stmt.setDate(5, java.sql.Date.valueOf(user.getBirthday()));	
-			stmt.setDouble(6, user.getWeight());	
-			stmt.setDouble(7, user.getHeight());	
+			var userName = user.getName();
+			var userEmail = user.getEmail();
+			var userLogin = user.getLogin();
+			var userPass = user.getPass();
+			var userBirthday = java.sql.Date.valueOf(user.getBirthday());
+			var userWeight = user.getWeight();
+			var userHeight = user.getHeight();
 			
-			connection.ExecuteCommand(stmt);
+			stmt.setString(1, userName);	
+			stmt.setString(2, userEmail);	
+			stmt.setString(3, userLogin);	
+			stmt.setString(4, userPass);				
+			stmt.setDate(5, userBirthday);	
+			stmt.setDouble(6, userWeight);	
+			stmt.setDouble(7, userHeight);			
+							
+			stmt.executeUpdate();								
+						
+			createdUser = GetByEmail(userEmail);
 			
 			System.out.println("Usuario adicionado com sucesso!");
 			
 		} catch (SQLException e) {			
 			e.printStackTrace();
-		}			
+		}	
+		
+		return createdUser;
+	}
+	
+	public User Update(User user, int userId) {
+		
+		User updateddUser = null;
+		
+		try {
+			
+			var query = String.format("UPDATE %s SET NAME = %s, EMAIL = %s, BIRTHDAY = %s, WEIGHT = %s, HEIGHT = %s "
+					+ "WHERE ID = " + userId, tableName); 
+			
+			stmt = connection.GetConnection().prepareStatement(query);			
+			
+			stmt.setString(1, user.getName());	
+			stmt.setString(2, user.getEmail());									
+			stmt.setDate(3, java.sql.Date.valueOf(user.getBirthday()));	
+			stmt.setDouble(4, user.getWeight());	
+			stmt.setDouble(5, user.getHeight());	
+			
+			stmt.executeUpdate();
+			
+			System.out.println("Usuario atualizado com sucesso!");
+			
+		} catch (SQLException e) {			
+			e.printStackTrace();
+		}
+		
+		return updateddUser;
 	}
 	
 	public void InsertRange(List<User> users) {
@@ -47,6 +89,10 @@ public class UserDAO {
 		for(var item : users) {
 			Insert(item);
 		}
+	}
+	
+	public User GetByEmail(String userEmail) {
+		return GetBy(userEmail, "EMAIL");
 	}
 	
 	public User GetById(int userId) {

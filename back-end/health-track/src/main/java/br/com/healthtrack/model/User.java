@@ -137,6 +137,14 @@ public final class User extends Person{
 	}
 	
 	/**
+	 * Método para setar/alterar do id da atividade
+	 * @return id da instância
+	 */
+	public void setId(int id) {
+		this.id= id ;
+	}
+	
+	/**
 	 * Método para retorno do nome
 	 * @return nome
 	 */

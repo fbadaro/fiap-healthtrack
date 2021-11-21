@@ -58,8 +58,6 @@ public class CadastroController extends HttpServlet {
 			var user = new User(userName, userEmail, userLogin, userPass, userHeight, userWeight, userBirthday);			
 			var createdUser = currentUserDAO.Insert(user);			
 			
-			System.out.println(createdUser.getName());
-			
 			request.getSession().setAttribute("currentUser", createdUser);			
 			response.sendRedirect("dash.jsp");	
 		}

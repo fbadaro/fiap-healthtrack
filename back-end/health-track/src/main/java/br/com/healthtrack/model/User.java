@@ -73,6 +73,7 @@ public final class User extends Person{
 		this.name = name;
 		this.email = email;
 		this.login = login;
+		this.pass = pass;
 		this.height = height;
 		this.weight = weight;
 		this.birthday = birthday;			
@@ -166,15 +167,7 @@ public final class User extends Person{
 	 */
 	public String getLogin() {
 		return login;
-	}
-	
-	/**
-	 * Método para retorno do password
-	 * @return password
-	 */
-	public String getPass() {
-		return pass;
-	}
+	}	
 	
 	/**
 	 * Método para retorno da data de nascimento
@@ -358,6 +351,14 @@ public final class User extends Person{
 	 */
 	public void setUserBloodPressure(List<UserBloodPressure> userBloodPressure) {
 		this.userBloodPressure = userBloodPressure;
+	}
+	
+	/**
+	 * Método para retorno do password
+	 * @return password
+	 */
+	public String getPass() {
+		return pass;
 	}
 	
 	public void setPass(String pass) {

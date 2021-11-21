@@ -33,27 +33,36 @@
 				<div class="ht-login-auth">
 					<span class="logo">Health Track</span>
 
-					<div class="form-group">
-						<label for="txtUserName" class="fw-bold">Usuário</label> <input
-							type="text" class="form-control" id="txtUserName"
-							aria-describedby="user">
-					</div>
+					<form action="login" method="post">
 
-					<div class="form-group">
-						<label for="txtUserPass" class="fw-bold">Password</label> <input
-							type="password" class="form-control" id="txtUserPass">
-					</div>
+						<div class="form-group">
+							<label for="txtUserEmail" class="fw-bold">Email</label> <input
+								type="text" class="form-control" id="txtUserEmail" name="txtUserEmail"
+								aria-describedby="user">
+						</div>
 
-					<div class="form-group form-check">
-						<input type="checkbox" class="form-check-input"
-							id="chkPersistLogin"> <label class="form-check-label"
-							for="chkPersistLogin">Continuar logado?</label> <a href="#"
-							title="Esqueceu sua senha" class="float-end">Esqueceu sua
-							senha?</a>
-					</div>
+						<div class="form-group">
+							<label for="txtUserPass" class="fw-bold">Password</label> <input
+								type="password" class="form-control" id="txtUserPass"
+								name="txtUserPass">
+						</div>
 
-					<a href="dash.html" type="submit" class="btn btn-secondary float-start">Criar Conta</a>
-					<a href="dash.jsp" type="submit" class="btn btn-primary float-end">Entrar</a>
+						<div class="form-group form-check">
+							<input type="checkbox" class="form-check-input"
+								id="chkPersistLogin"> <label class="form-check-label"
+								for="chkPersistLogin">Continuar logado?</label> <a href="#"
+								title="Esqueceu sua senha" class="float-end">Esqueceu sua
+								senha?</a>
+						</div>
+
+						<a href="cadastro.jsp" type="submit" class="btn btn-secondary float-start">Criar Conta</a> 						
+						<input type="submit" class="btn btn-primary float-end" value="Entrar" />
+
+						<c:if test="${not empty error}">
+							<strong style="color: red; display: block; clear: both">Usuario ou Senha invalidos</strong>
+						</c:if>
+
+					</form>
 
 					<div class="ht-login-auth-social-wrapper">
 						<ul class="ht-login-auth-social">

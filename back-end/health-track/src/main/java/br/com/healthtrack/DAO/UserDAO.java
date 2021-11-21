@@ -84,6 +84,30 @@ public class UserDAO {
 		return updateddUser;
 	}
 	
+	public boolean Authenticate(String email, String pass) {
+		
+		ResultSet resultSet = null;
+		boolean existUser = false;	
+		
+		try {
+			
+			var query = String.format("SELECT * FROM %s WHERE EMAIL = '" + email + "' AND PASS = '" + pass + "' AND ROWNUM = 1", tableName);					
+			
+			stmt = connection.GetConnection().prepareStatement(query);	
+			
+			resultSet = stmt.executeQuery();	
+			
+			if (resultSet.next() != false) {
+				existUser = true;
+			}
+			
+		} catch (SQLException e) {			
+			e.printStackTrace();
+		}	
+		
+		return existUser;
+	}
+	
 	public void InsertRange(List<User> users) {
 		
 		for(var item : users) {

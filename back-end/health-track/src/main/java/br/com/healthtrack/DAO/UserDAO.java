@@ -47,14 +47,69 @@ public class UserDAO {
 		for(var item : users) {
 			Insert(item);
 		}
-	}	
+	}
 	
-	public User Get(int userId) {			
+	public User GetById(int userId) {
+		return GetBy(userId, "ID");
+	}
+	
+	public User GetBy(String value, String columnName) {			
 		
 		ResultSet resultSet = null;
 		User user = null;	
 		
-		var query = String.format("SELECT * FROM %s WHERE ID = " + userId + " AND ROWNUM = 1", tableName);
+		var query = String.format("SELECT * FROM %s WHERE %s = '" + value + "' AND ROWNUM = 1", tableName, columnName);
+		
+		try {
+			
+			stmt = connection.GetConnection().prepareStatement(query);
+			resultSet = stmt.executeQuery();
+								
+			if (resultSet.next() != false) {
+				
+				var userId = resultSet.getInt("ID");
+				var userName = resultSet.getString("NAME");
+				var userEmail = resultSet.getString("EMAIL");
+				var userLogin = resultSet.getString("LOGIN");
+				var userPass = resultSet.getString("PASS");
+				var userHeight = resultSet.getDouble("HEIGHT");
+				var userWeight = resultSet.getDouble("WEIGHT");
+				var userBirthday = resultSet.getDate("BIRTHDAY").toLocalDate();
+				
+				user = new User(
+					userId,
+					userName,
+					userEmail,
+					userLogin,
+					userPass,
+					userHeight,
+					userWeight,
+					userBirthday
+				);
+			}
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				stmt.close();
+				resultSet.close();
+				connection.CloseConnection();
+			} catch (SQLException e) { 
+				e.printStackTrace();
+			}
+		}
+		
+		return user;
+	}
+	
+	public User GetBy(int value, String columnName) {			
+		
+		ResultSet resultSet = null;
+		User user = null;	
+		
+		var query = String.format("SELECT * FROM %s WHERE %s = '" + value + "' AND ROWNUM = 1", tableName, columnName);
 		
 		try {
 			
@@ -62,13 +117,26 @@ public class UserDAO {
 			resultSet = stmt.executeQuery();
 			
 			if (resultSet.next() != false) {
+				
+				var userId = resultSet.getInt("ID");
+				var userName = resultSet.getString("NAME");
+				var userEmail = resultSet.getString("EMAIL");
+				var userLogin = resultSet.getString("LOGIN");
+				var userPass = resultSet.getString("PASS");
+				var userHeight = resultSet.getDouble("HEIGHT");
+				var userWeight = resultSet.getDouble("WEIGHT");
+				var userBirthday = resultSet.getDate("BIRTHDAY").toLocalDate();
+				
 				user = new User(
-						resultSet.getInt("ID"),
-						resultSet.getString("NAME"),
-						resultSet.getString("EMAIL"),
-						resultSet.getString("LOGIN"),
-						resultSet.getString("PASS")
-					);
+					userId,
+					userName,
+					userEmail,
+					userLogin,
+					userPass,
+					userHeight,
+					userWeight,
+					userBirthday
+				);
 			}
 		}
 		catch(SQLException e) {

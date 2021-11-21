@@ -52,7 +52,7 @@ public class UserFeedDAO {
 	
 	public boolean ExistUser(int userId) {
 		
-		var user = new UserDAO().Get(userId);
+		var user = new UserDAO().GetById(userId);
 		
 		if (user == null) {
 			System.out.println(String.format("O usuario com o Id %s nao existe no banco de dados", userId));
@@ -88,24 +88,24 @@ public class UserFeedDAO {
 			
 			while(resultSet.next()) {
 								
-				//var id = resultSet.getInt("ID");
+				var id = resultSet.getInt("ID");
 				var quantity = resultSet.getDouble("QUANTITY");
 				var type = resultSet.getInt("TYPE");
 				var feedDate = resultSet.getDate("FEEDDATE");
 				var feedId = resultSet.getInt("FEEDID");
 				var userId = resultSet.getInt("USERID");
 				
-				// TODO
-				var user = new UserDAO().Get(userId);
+				var user = new UserDAO().GetById(userId);
 				var feed = new FeedDAO().Get(feedId);
 				
 				UserFeed userFeed = new UserFeed(
-						user, 
-						feed,
-						quantity,
-						type, 
-						feedDate.toLocalDate()
-						);
+					id,
+					user, 
+					feed,
+					quantity,
+					type, 
+					feedDate.toLocalDate()
+				);
 				
 				listaUserFeed.add(userFeed);
 				

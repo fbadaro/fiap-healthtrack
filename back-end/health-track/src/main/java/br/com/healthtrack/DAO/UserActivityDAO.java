@@ -51,7 +51,7 @@ public class UserActivityDAO {
 	
 	public boolean ExistUser(int userId) {
 				
-		var user = new UserDAO().Get(userId);
+		var user = new UserDAO().GetById(userId);
 		
 		if (user == null) {
 			System.out.println(String.format("O usuario com o Id %s nao existe no banco de dados", userId));
@@ -87,22 +87,22 @@ public class UserActivityDAO {
 			
 			while(resultSet.next()) {
 								
-				//var id = resultSet.getInt("ID");
+				var id = resultSet.getInt("ID");
 				var activityDuration = resultSet.getInt("ACTIVITYDURATION");
 				var activityDate  = resultSet.getDate("ACTIVITYDATE");
 				var userId = resultSet.getInt("USERID");
 				var activityId = resultSet.getInt("ACTIVITYID");
 				
-				// TODO
-				var user = new UserDAO().Get(userId);
+				var user = new UserDAO().GetById(userId);
 				var activity = new ActivityDAO().Get(activityId);
 				
 				UserActivity userActivity = new UserActivity(
-						user, 
-						activity, 
-						activityDuration, 
-						activityDate.toLocalDate()
-						);
+					id,
+					user, 
+					activity, 
+					activityDuration, 
+					activityDate.toLocalDate()
+				);
 				
 				listaUserActivity.add(userActivity);
 				

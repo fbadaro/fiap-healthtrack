@@ -21,7 +21,7 @@
 		<main>
 			<header class="container">
 				<div class="ht-header-logo">
-					<a href="dash.html" title="Health Track" class="ht-logo-letter">
+					<a href="dash.jsp" title="Health Track" class="ht-logo-letter">
 						<img src="assets/images/logo-letters.svg" alt="">
 					</a>
 					<h6>Cadastro</h6>

@@ -51,7 +51,7 @@ public class UserBloodPressureDAO {
 	
 	public boolean ExistUser(int userId) {
 		
-		var user = new UserDAO().Get(userId);
+		var user = new UserDAO().GetById(userId);
 		
 		if (user == null) {
 			System.out.println(String.format("O usuario com o Id %s nao existe no banco de dados", userId));
@@ -75,21 +75,21 @@ public class UserBloodPressureDAO {
 			
 			while(resultSet.next()) {
 								
-				//var id = resultSet.getInt("ID");
+				var id = resultSet.getInt("ID");
 				var diastolic = resultSet.getInt("DIASTOLICPRESSSURE");
 				var systolic  = resultSet.getInt("SYSTOLICPRESSURE");
 				var pressureDate = resultSet.getDate("PRESSUREDATE");
 				var userId = resultSet.getInt("USERID");
 				
-				// TODO
-				var user = new UserDAO().Get(userId);				
+				var user = new UserDAO().GetById(userId);				
 				
 				UserBloodPressure userBloodPressure = new UserBloodPressure(
-						user, 
-						systolic, 
-						diastolic, 
-						pressureDate.toLocalDate()
-						);
+					id,
+					user, 
+					systolic, 
+					diastolic, 
+					pressureDate.toLocalDate()
+				);
 				
 				listaUserPressure.add(userBloodPressure);
 				

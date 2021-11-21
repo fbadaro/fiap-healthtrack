@@ -64,7 +64,18 @@ public final class User extends Person{
 		this.email = email;
 		this.login = login;
 		
-		setPass(pass);
+		ValidateUser();			
+	}
+	
+	public User(int id, String name, String email, String login, String pass, Double height, Double weight, LocalDate birthday) {
+		
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.login = login;
+		this.height = height;
+		this.weight = weight;
+		this.birthday = birthday;			
 		
 		ValidateUser();			
 	}
@@ -90,6 +101,7 @@ public final class User extends Person{
 		this.name = name;
 		this.email = email;
 		this.login = login;
+		
 		setPass(pass);;
 		
 		ValidateUser();

@@ -16,7 +16,7 @@ public class UserWeightDAOTest {
 		UserDAO userDAO = DAOFactory.getUserDAO();		
 		
 		// INSERT
-		var userDatabase = userDAO.Get(1);
+		var userDatabase = userDAO.GetById(1);
 		var userWeights = new ArrayList<UserWeight>();
 				
 		userWeights.add(new UserWeight(userDatabase, 67.5, 1.67, LocalDate.now()));

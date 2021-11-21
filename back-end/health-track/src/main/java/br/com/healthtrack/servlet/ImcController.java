@@ -50,9 +50,9 @@ public class ImcController extends HttpServlet {
 		
 		switch(action) {
 		case "list":
-				User currentUser= userDAO.Get(1);		
+				User currentUser= userDAO.GetById(1);		
 				
-				//int id = Integer.parseInt(request.getParameter("codigo")); verificar se é isso ou se é pra pegar da session o id
+				//int id = Integer.parseInt(request.getParameter("codigo")); verificar se ï¿½ isso ou se ï¿½ pra pegar da session o id
 				int id = currentUser.getId();
 				UserWeight userweight = weightDAO.Get(id);
 				
@@ -75,7 +75,7 @@ public class ImcController extends HttpServlet {
 			//User currentUser = (User) request.getSession().getAttribute("currentUser");
 			
 			//User mockado enquanto nao for passado no session no login
-			User currentUser= userDAO.Get(1);	
+			User currentUser= userDAO.GetById(1);	
 			Double currentHeight = currentUser.getHeight();
 			System.out.println(currentHeight);
 			
@@ -127,7 +127,7 @@ public class ImcController extends HttpServlet {
 			//User currentUser = (User) request.getSession().getAttribute("currentUser");
 			
 			//User mockado enquanto nao for passado no session no login
-			User currentUser= userDAO.Get(1);	
+			User currentUser= userDAO.GetById(1);	
 			Double currentHeight = currentUser.getHeight();
 			
 			
@@ -135,7 +135,7 @@ public class ImcController extends HttpServlet {
 			double weight = Double.parseDouble(request.getParameter("weight"));
 			LocalDate weightdate = LocalDate.parse(request.getParameter("date"));
 			
-			//guardar na session o valor de weight para verificar se está vazio ou não
+			//guardar na session o valor de weight para verificar se estï¿½ vazio ou nï¿½o
 			HttpSession session = request.getSession();
 			session.setAttribute("ImcServlet", weight);
 			
@@ -156,8 +156,8 @@ public class ImcController extends HttpServlet {
 			//User currentUser = (User) request.getSession().getAttribute("currentUser");
 			
 			//User mockado enquanto nao for passado no session no login
-			User currentUser= userDAO.Get(1);	
-			//Pegar peso do usuário logado
+			User currentUser= userDAO.GetById(1);	
+			//Pegar peso do usuï¿½rio logado
 			Double currentHeight = currentUser.getHeight();
 			
 			double height = Double.parseDouble(request.getParameter("height"));

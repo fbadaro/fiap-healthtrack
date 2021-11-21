@@ -58,7 +58,7 @@ public class AddressDAO {
 	
 	public boolean ExistUser(int userId) {
 		
-		var user = new UserDAO().Get(userId);
+		var user = new UserDAO().GetById(userId);
 		
 		if (user == null) {
 			System.out.println(String.format("O usuario com o Id %s nao existe no banco de dados", userId));
@@ -82,29 +82,28 @@ public class AddressDAO {
 			
 			while(resultSet.next()) {
 								
-				//var id = resultSet.getInt("ID");
-				var street = resultSet.getString("STREET");
-				var number  = resultSet.getInt("number");
-				var city = resultSet.getString("CITY");
-				var state = resultSet.getString("STATE");
-				var principal = resultSet.getString("PRINCIPAL");
-				var zipcode = resultSet.getString("ZIPCODE");
-				var country = resultSet.getString("COUNTRY");
-				var userId = resultSet.getInt("USERID");
-				
-				// TODO
-				var user = new UserDAO().Get(userId);				
+				var addressId = resultSet.getInt("ID");
+				var addressStreet = resultSet.getString("STREET");
+				var addressNumber  = resultSet.getInt("number");
+				var addressCity = resultSet.getString("CITY");
+				var addressState = resultSet.getString("STATE");
+				var addressPrincipal = resultSet.getBoolean("PRINCIPAL");
+				var addressZipcode = resultSet.getString("ZIPCODE");
+				var addressCountry = resultSet.getString("COUNTRY");
+				var addressUserId = resultSet.getInt("USERID");				 
+				var addressUser = new UserDAO().GetById(addressUserId);				
 				
 				Address address = new Address(
-						user, 
-						street, 
-						city, 
-						number,
-						country,
-						state,
-						zipcode,
-						true					
-						);
+					addressId,
+					addressUser, 
+					addressStreet, 
+					addressCity, 
+					addressNumber,
+					addressCountry,
+					addressState,
+					addressZipcode,
+					addressPrincipal				
+				);
 				
 				listaUserAddress.add(address);
 				

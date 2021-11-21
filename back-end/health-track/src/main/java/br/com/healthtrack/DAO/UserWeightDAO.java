@@ -52,7 +52,7 @@ public class UserWeightDAO {
 	
 	public boolean ExistUser(int userId) {
 		
-		var user = new UserDAO().Get(userId);
+		var user = new UserDAO().GetById(userId);
 		
 		if (user == null) {
 			System.out.println(String.format("O usuario com o Id %s nao existe no banco de dados", userId));
@@ -103,21 +103,22 @@ public class UserWeightDAO {
 			
 			while(resultSet.next()) {
 								
-				//var id = resultSet.getInt("ID");
+				var id = resultSet.getInt("ID");
 				var weight = resultSet.getDouble("WEIGHT");
 				var height  = resultSet.getDouble("HEIGHT");
 				var weightDate = resultSet.getDate("WEIGHTDATE");
 				var userId = resultSet.getInt("USERID");
 				
 				// TODO
-				var user = new UserDAO().Get(userId);				
+				var user = new UserDAO().GetById(userId);				
 				
 				UserWeight userWeight = new UserWeight(
-						user, 
-						weight, 
-						height, 
-						weightDate.toLocalDate()
-						);
+					id,
+					user, 
+					weight, 
+					height, 
+					weightDate.toLocalDate()
+				);
 				
 				listaUserWeight.add(userWeight);
 				
@@ -153,17 +154,20 @@ public class UserWeightDAO {
 
 			if (resultSet.next()) {
 				
-				//int userId = resultSet.getInt("USERID");
-				var user = new UserDAO().Get(userId);
-				Date weightDate = resultSet.getDate("WEIGHTDATE");
+				var id = resultSet.getInt("ID");
+				var height = resultSet.getDouble("HEIGHT");
+				var weight = resultSet.getDouble("WEIGHT");
+				var user = new UserDAO().GetById(userId);				
+				var weightDate = resultSet.getDate("WEIGHTDATE");
+				var date = weightDate.toLocalDate();
 				
 				userweight = new UserWeight(
-						resultSet.getInt("ID"),
-						user,
-						resultSet.getDouble("HEIGHT"),
-						resultSet.getDouble("WEIGHT"),
-						weightDate.toLocalDate()						
-					);
+					id,
+					user,
+					height,
+					weight,
+					date					
+				);
 			}
 		}
 		catch(SQLException e) {

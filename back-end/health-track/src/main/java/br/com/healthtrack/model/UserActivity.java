@@ -35,10 +35,19 @@ public class UserActivity implements BaseRepository<UserActivity> {
 	 */
 	private LocalDate date;
 	
+	public UserActivity(int id, User user, Activity activity, int activityDuration, LocalDate date) {
+		
+		this.id = id;
+		this.user = user;
+		this.activity = activity;
+		this.activityDuration = activityDuration;
+		this.date = date;
+		
+		ValidateUserActivity();
+	}
 	
 	public UserActivity(User user, Activity activity, int activityDuration, LocalDate date) {
-		
-		this.id = ((int) (Math.random() * (100 - 50) + 50));
+				
 		this.user = user;
 		this.activity = activity;
 		this.activityDuration = activityDuration;

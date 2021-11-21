@@ -19,7 +19,7 @@ public class UserFeedDAOTest {
 		
 		// INSERT
 		var feedsDatabase = feedDAO.ListAll();
-		var userDatabase = userDAO.Get(1);	
+		var userDatabase = userDAO.GetById(1);	
 		var userFeeds = new ArrayList<UserFeed>();
 		
 		for(var item : feedsDatabase) {

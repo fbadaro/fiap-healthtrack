@@ -16,7 +16,7 @@ public class UserBloodPressureDAOTest {
 		UserDAO userDAO = DAOFactory.getUserDAO();
 		
 		// INSERT
-		var userDatabase = userDAO.Get(1);
+		var userDatabase = userDAO.GetById(1);
 		var userPressures = new ArrayList<UserBloodPressure>();
 		
 		userPressures.add(new UserBloodPressure(userDatabase, 10, 15, LocalDate.now()));

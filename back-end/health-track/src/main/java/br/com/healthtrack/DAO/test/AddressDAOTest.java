@@ -15,7 +15,7 @@ public class AddressDAOTest {
 		UserDAO userDAO = DAOFactory.getUserDAO();		
 		
 		// INSERT
-		var userDatabase = userDAO.Get(1);
+		var userDatabase = userDAO.GetById(1);
 		var userAddresses = new ArrayList<Address>();
 		
 		userAddresses.add(new Address(userDatabase, "Rua 1", "Cidade 1", 103, "Pais 1", "Estado 1", "09761125", true));

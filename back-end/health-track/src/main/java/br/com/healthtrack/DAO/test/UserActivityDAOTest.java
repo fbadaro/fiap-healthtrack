@@ -19,7 +19,7 @@ public class UserActivityDAOTest {
 		
 		// INSERT
 		var activitiesDatabase = activityDAO.ListAll();		
-		var userDatabase = userDAO.Get(1);		
+		var userDatabase = userDAO.GetById(1);		
 		var userActivities = new ArrayList<UserActivity>();
 		
 		for(var item : activitiesDatabase) {

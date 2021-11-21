@@ -14,7 +14,7 @@ public class UserDAOTest {
 		var user = new User("Fabio Badaro", "fabio@gmail.com", "fbadaro", "123456");		
 		userDAO.Insert(user);
 				
-		var userDatabase = userDAO.Get(1);		
+		var userDatabase = userDAO.GetById(1);		
 		System.out.println(userDatabase.getName());
 	}
 }

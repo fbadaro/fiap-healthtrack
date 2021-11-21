@@ -1,5 +1,6 @@
 package br.com.healthtrack.DAO;
 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -61,6 +62,33 @@ public class UserWeightDAO {
 		return true;
 	}
 	
+	public void edit(UserWeight userweight) {
+		try {
+			var query = String.format("UPDATE %s SET WEIGHT = ?, HEIGHT = ?, WEIGHTDATE = ? "
+					+ "WHERE ID = ? ", tableName); 
+			
+			stmt = connection.GetConnection().prepareStatement(query);
+			stmt.setDouble(1, userweight.getWeight());	
+			stmt.setDouble(2, userweight.getHeight());	
+			stmt.setDate(3, java.sql.Date.valueOf(userweight.getDate()));
+			stmt.setInt(4, userweight.getId());
+
+			stmt.executeUpdate();
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			try {
+				stmt.close();
+				connection.CloseConnection();
+			} catch (SQLException e) { 
+				e.printStackTrace();
+			}
+		}		
+	}
+	
 	public List<UserWeight> ListAll() {
 		
 		List<UserWeight> listaUserWeight = new ArrayList<UserWeight>();
@@ -109,5 +137,48 @@ public class UserWeightDAO {
 		}
 		
 		return listaUserWeight;
+	}
+	
+	public UserWeight Get(int userId) {			
+		
+		ResultSet resultSet = null;
+		UserWeight userweight = null;	
+
+		
+		try {
+			var query = String.format("SELECT * FROM %s where weightdate in (select max(weightdate) from tht_usweight_011 where userid = ? ) and rownum <= 1", tableName);			
+			stmt = connection.GetConnection().prepareStatement(query);
+			stmt.setInt(1, userId);
+			resultSet = stmt.executeQuery();
+
+			if (resultSet.next()) {
+				
+				//int userId = resultSet.getInt("USERID");
+				var user = new UserDAO().Get(userId);
+				Date weightDate = resultSet.getDate("WEIGHTDATE");
+				
+				userweight = new UserWeight(
+						resultSet.getInt("ID"),
+						user,
+						resultSet.getDouble("HEIGHT"),
+						resultSet.getDouble("WEIGHT"),
+						weightDate.toLocalDate()						
+					);
+			}
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				stmt.close();
+				resultSet.close();
+				connection.CloseConnection();
+			} catch (SQLException e) { 
+				e.printStackTrace();
+			}
+		}
+		
+		return userweight;
 	}
 }

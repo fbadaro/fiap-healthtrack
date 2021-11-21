@@ -8,7 +8,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cadastro Alimentação - Health Track</title>
+  <title>Cadastro IMC - Health Track</title>
 
   <!-- Main  -->
   <%@ include file="main-css.jsp"%>
@@ -27,21 +27,26 @@
       <%@ include file="header.jsp"%>
 
       <div class="container">
-        <form class="row g-4">
+        <form class="row g-4" action="imc" method="post">
+          <input type="hidden" value="edit" name="action">
+          <input type="hidden" value="${imc.id}" name="id">
+          
+          
           <h5>Cadastro de IMC</h5>
           <hr>
-
+		<!-- IF para ver se o campo não é vazio, se não for, preencher o campo com aquela cor mais clara -->
           <div class="col-md-6">
+      
             <label for="txtHeight" class="form-label">Informe sua altura</label>
-            <input type="number" class="form-control" id="txtHeight">
+            <input type="number" class="form-control" name="height" id="txtHeight" value="${imc.height}">
           </div>
           <div class="col-md-6">
             <label for="txtWeight" class="form-label">Informe seu peso</label>
-            <input type="number" class="form-control" id="txtWeight">
+            <input type="number" class="form-control" name="weight" id="txtWeight" value="${imc.weight}">
           </div>
           <div class="col-md-6">
             <label for="txtDate" class="form-label">Data</label>
-            <input type="date" class="form-control" id="txtDate">
+            <input type="date" class="form-control" name="date" id="txtDate" value="${imc.weightdate}">
           </div>
           <div class="col-md-4">
             <label for="txtQuantity" class="form-label">&nbsp;</label>

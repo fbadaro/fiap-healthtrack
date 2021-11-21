@@ -35,6 +35,11 @@ public class UserWeight implements BaseRepository<UserWeight> {
 	 */
 	private LocalDate date;
 	
+	
+	public UserWeight() {
+		
+	}
+	
 	public UserWeight(int id, User user, double height, double weight, LocalDate date) {
 		
 		this.id = id;

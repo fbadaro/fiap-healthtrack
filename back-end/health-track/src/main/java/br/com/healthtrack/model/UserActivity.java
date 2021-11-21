@@ -28,7 +28,7 @@ public class UserActivity implements BaseRepository<UserActivity> {
 	/**
 	 * Duração da atividade
 	 */
-	private LocalDate activityDuration;
+	private int activityDuration;
 	
 	/**
 	 * Data da atividade
@@ -36,7 +36,7 @@ public class UserActivity implements BaseRepository<UserActivity> {
 	private LocalDate date;
 	
 	
-	public UserActivity(User user, Activity activity, LocalDate activityDuration, LocalDate date) {
+	public UserActivity(User user, Activity activity, int activityDuration, LocalDate date) {
 		
 		this.id = ((int) (Math.random() * (100 - 50) + 50));
 		this.user = user;
@@ -51,7 +51,7 @@ public class UserActivity implements BaseRepository<UserActivity> {
 	 * Método para garantir que a instâcia seja criada corretamente
 	 */
 	private void ValidateUserActivity() {
-		if(this.user == null || this.activity == null || this.activityDuration == null || this.date == null) {
+		if(this.user == null || this.activity == null  || this.date == null) {
 			throw new IllegalArgumentException("Os campos nao podem estar vazios");
 		}		
 	}
@@ -84,7 +84,7 @@ public class UserActivity implements BaseRepository<UserActivity> {
 	 * Método para retorno da duração da atividade	
 	 * @return duração
 	 */
-	public LocalDate getActivityDuration() {
+	public int getActivityDuration() {
 		return activityDuration;
 	}
 	

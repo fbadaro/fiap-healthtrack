@@ -45,7 +45,7 @@ ALTER TABLE THT_SOCIAL_006 ADD CONSTRAINT tht_social_pk PRIMARY KEY ( id );
 
 CREATE TABLE THT_USACTIVITY_009 (
     id                INTEGER NOT NULL,
-    activityduration  DATE NOT NULL,
+    activityduration  NUMBER(3,0) NOT NULL,
     activitydate      DATE NOT NULL,
     activityid        INTEGER NOT NULL,
     userid            INTEGER NOT NULL

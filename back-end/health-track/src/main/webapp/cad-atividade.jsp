@@ -33,22 +33,19 @@
 
           <div class="col-md-12">
             <label for="ddlAtividade" class="form-label">Selecione o tipo de atividade</label>
-            <select id="ddlAtividade" class="form-select">
-              <option value="1">Musculação</option>
-              <option value="2">Caminhada</option>
-              <option value="3">Natação</option>
-              <option value="4">Bicicleta</option>
-              <option value="5">Corrida</option>
-              <option value="6">Esteira</option>
+            <select id="ddlAtividade" name="idActivity" class="form-select">
+            <c:forEach var="activity" items="${lista}">
+              <option value='${activity.id}'>${activity.name}</option>
+            </c:forEach>
             </select>
           </div>
           <div class="col-md-6">
             <label for="txtDate" class="form-label">Data</label>
-            <input type="date" class="form-control" id="txtDate">
+            <input type="date" class="form-control" id="txtDate" name="date">
           </div>
           <div class="col-md-6">
             <label for="txtTime" class="form-label">Duração Atividade</label>
-            <input type="time" class="form-control" id="txtTime">
+            <input type="time" class="form-control" id="txtTime" name="duration">
           </div>
           <div class="col-12">
             <button type="submit" class="btn btn-primary float-end">Cadastrar</button>

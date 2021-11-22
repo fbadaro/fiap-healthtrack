@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.healthtrack.DAO.UserActivityDAO;
 import br.com.healthtrack.DAO.UserFeedDAO;
+import br.com.healthtrack.DAO.UserWeightDAO;
 import br.com.healthtrack.factory.DAOFactory;
 import br.com.healthtrack.model.User;
 
@@ -21,6 +22,7 @@ public class DashboardController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UserActivityDAO userActivityDAO = null;
 	private UserFeedDAO userFeedDAO = null;
+	private UserWeightDAO userWeightDAO = null;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -30,6 +32,7 @@ public class DashboardController extends HttpServlet {
         
         userActivityDAO = DAOFactory.getUserActivityDAO();
         userFeedDAO = DAOFactory.getUserFeedDAO();
+        userWeightDAO = DAOFactory.getUserWeightDAO();
     }
 
 	/**
@@ -47,6 +50,12 @@ public class DashboardController extends HttpServlet {
 						
 			var userFeedList = userFeedDAO.ListAllByUserId(currentUser.getId());
 			request.setAttribute("userFeedList", userFeedList);	
+			
+			var imcList = userWeightDAO.IMC(currentUser.getId());
+			request.setAttribute("imcList", imcList);
+			
+			var imcMonth = userWeightDAO.imcByMonth(currentUser.getId());
+			request.setAttribute("imcMonth", imcMonth);
 						
 			request.getRequestDispatcher("dash.jsp").forward(request, response);
 		}

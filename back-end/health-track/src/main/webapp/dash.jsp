@@ -228,6 +228,8 @@
               </div>
             </div>
           </div>
+          <input type="hidden" id="imc" value="${ imcList }">   
+          <input type="hidden" id="imcMonth" value="${ imcMonth }">          
 
           <h5><img src="assets/images/ico-muscle.svg" alt="Registro de Atividades">Histórico IMC Mensal</h5>
           <canvas id="myChart" width="100" height="30"></canvas>
@@ -248,14 +250,16 @@
 
   <script>
     var ctx = document.getElementById('myChart');
+    var imcList = document.getElementById('imc');
+    var imcMonth = document.getElementById('imcMonth');
 
-    const labels = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho"];
+    const labels = ${ imcMonth };
     const data = {
       labels: labels,
       datasets: [
         {
           label: 'Medição',
-          data: [24.6, 28.9, 30.4, 23.5, 24.4, 23.8],
+          data: ${ imcList },
           borderColor: 'rgb(255, 99, 132)',
           backgroundColor: 'rgba(255, 99, 132, 0.5)',
         }

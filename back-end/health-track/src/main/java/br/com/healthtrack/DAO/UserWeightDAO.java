@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.healthtrack.connection.ConnectionManager;
+import br.com.healthtrack.factory.DAOFactory;
 import br.com.healthtrack.model.UserWeight;
 
 public class UserWeightDAO {
@@ -89,7 +90,7 @@ public class UserWeightDAO {
 		}		
 	}
 	
-	public List<UserWeight> ListAll() {
+	public List<UserWeight> ListAll(int userId) {
 		
 		List<UserWeight> listaUserWeight = new ArrayList<UserWeight>();
 		ResultSet resultSet = null;
@@ -107,7 +108,7 @@ public class UserWeightDAO {
 				var weight = resultSet.getDouble("WEIGHT");
 				var height  = resultSet.getDouble("HEIGHT");
 				var weightDate = resultSet.getDate("WEIGHTDATE");
-				var userId = resultSet.getInt("USERID");
+				//var userId = resultSet.getInt("USERID");
 				
 				// TODO
 				var user = new UserDAO().GetById(userId);				
@@ -115,8 +116,61 @@ public class UserWeightDAO {
 				UserWeight userWeight = new UserWeight(
 					id,
 					user, 
+					height,
 					weight, 
-					height, 
+					weightDate.toLocalDate()
+				);
+				
+				listaUserWeight.add(userWeight);
+				
+			}
+		} catch (SQLException e) {			
+			e.printStackTrace();
+		} 
+		finally {
+			try {
+				stmt.close();
+				resultSet.close();
+				connection.CloseConnection();
+			} catch (SQLException e) {				
+				e.printStackTrace();
+			}
+		
+		}
+		
+		return listaUserWeight;
+	}
+	
+	
+	public List<UserWeight> ListAllByUserID(int userId) {
+		
+		List<UserWeight> listaUserWeight = new ArrayList<UserWeight>();
+		ResultSet resultSet = null;
+		
+		try {
+			
+			var query = String.format("SELECT * FROM %s WHERE USERID = ?", tableName);
+			
+			stmt = connection.GetConnection().prepareStatement(query);
+			stmt.setInt(1, userId);
+			resultSet = stmt.executeQuery();			
+			
+			while(resultSet.next()) {
+								
+				var id = resultSet.getInt("ID");
+				var weight = resultSet.getDouble("WEIGHT");
+				var height  = resultSet.getDouble("HEIGHT");
+				var weightDate = resultSet.getDate("WEIGHTDATE");
+				//var userId = resultSet.getInt("USERID");
+				
+				// TODO
+				var user = new UserDAO().GetById(userId);				
+				
+				UserWeight userWeight = new UserWeight(
+					id,
+					user, 
+					height,
+					weight,
 					weightDate.toLocalDate()
 				);
 				
@@ -185,4 +239,108 @@ public class UserWeightDAO {
 		
 		return userweight;
 	}
+	
+	public List IMC(int userId) {
+		ResultSet resultSet = null;
+		UserWeight userweight = null;
+		UserWeightDAO weightDAO = DAOFactory.getUserWeightDAO();
+		userweight = weightDAO.Get(userId);
+
+		List imcs = new ArrayList<>();
+		
+		try {
+
+			var query = String.format("select ROUND(((sum(weight))/((sum(height/100*height/100)))),1) as imc,\r\n"
+					+ "to_char(weightdate,'MONTH') as mes,\r\n"
+					+ "to_char(weightdate,'mm') as mes_numerico\r\n"
+					+ "from %s\r\n"
+					+ "where userid = ? \r\n"
+					+ "group by to_char(weightdate,'MONTH'), to_char(weightdate,'mm') order by mes_numerico",tableName);
+			stmt = connection.GetConnection().prepareStatement(query);
+			//System.out.println(userweight.getWeight() + " " + userweight.getHeight() + " " + userweight.getDate());
+
+			stmt.setInt(1, userId);
+			//stmt.setDate(6, java.sql.Date.valueOf(userweight.getDate()));
+			resultSet = stmt.executeQuery();
+
+			while(resultSet.next()) {
+				
+				var IMC = resultSet.getDouble("IMC");
+				//var MES = resultSet.getString("MES");
+				//System.out.println(IMC);
+				//System.out.println(MES);
+				imcs.add(resultSet.getDouble("IMC"));
+				//imcs.add(resultSet.getString("MES"));
+				
+			}
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				stmt.close();
+				resultSet.close();
+				connection.CloseConnection();
+			} catch (SQLException e) { 
+				e.printStackTrace();
+			}
+		}
+		
+		return imcs;
+	}
+	
+	public List imcByMonth(int userId) {
+		ResultSet resultSet = null;
+		UserWeight userweight = null;
+		UserWeightDAO weightDAO = DAOFactory.getUserWeightDAO();
+		userweight = weightDAO.Get(userId);
+
+		List imcsMonth = new ArrayList<>();
+		
+		try {
+
+			var query = String.format("select ROUND(((sum(weight))/((sum(height/100*height/100)))),1) as imc,\r\n"
+					+ "to_char(weightdate,'MONTH') as mes,\r\n"
+					+ "to_char(weightdate,'mm') as mes_numerico\r\n"
+					+ "from %s\r\n"
+					+ "where userid = ? \r\n"
+					+ "group by to_char(weightdate,'MONTH'), to_char(weightdate,'mm') order by mes_numerico",tableName);
+			stmt = connection.GetConnection().prepareStatement(query);
+			//System.out.println(userweight.getWeight() + " " + userweight.getHeight() + " " + userweight.getDate());
+
+			stmt.setInt(1, userId);
+			//stmt.setDate(6, java.sql.Date.valueOf(userweight.getDate()));
+			resultSet = stmt.executeQuery();
+
+			while(resultSet.next()) {
+				
+				//var IMC = resultSet.getDouble("IMC");
+				var MES = resultSet.getString("MES");
+				//System.out.println(IMC);
+				//System.out.println(MES);
+				//imcs.add(resultSet.getDouble("IMC"));
+				imcsMonth.add('"' + MES + '"');
+				
+			}
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				stmt.close();
+				resultSet.close();
+				connection.CloseConnection();
+			} catch (SQLException e) { 
+				e.printStackTrace();
+			}
+		}
+		
+		return imcsMonth;
+	}
+		
+		
 }
+	
+

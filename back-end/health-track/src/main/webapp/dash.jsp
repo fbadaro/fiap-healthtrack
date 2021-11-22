@@ -54,80 +54,29 @@
                           <th scope="col">Tipo Atividade</th>
                           <th scope="col">Duração</th>
                           <th scope="col">Data</th>
-                          <th scope="col">Calorias</th>
                           <th scope="col"></th>
                           <th scope="col"></th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <th scope="row"><span class="index">1</span></th>
-                          <td>Bicicleta</td>
-                          <td>02:30 horas</td>
-                          <td>22/06/2021</td>
-                          <td>1.000 cal</td>
-                          <td>
-                            <a href="#" title="Editar" class="ico-edit">
-                              <img src="assets/images/ico-edit.svg" alt="Editar">
-                            </a>
-                          </td>
-                          <td>
-                            <a href="#" title="Editar" class="ico-remove">
-                              <img src="assets/images/ico-remove.svg" alt="Remover">
-                            </a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <th scope="row"><span class="index">1</span></th>
-                          <td>Bicicleta</td>
-                          <td>02:30 horas</td>
-                          <td>22/06/2021</td>
-                          <td>1.000 cal</td>
-                          <td>
-                            <a href="#" title="Editar" class="ico-edit">
-                              <img src="assets/images/ico-edit.svg" alt="Editar">
-                            </a>
-                          </td>
-                          <td>
-                            <a href="#" title="Editar" class="ico-remove">
-                              <img src="assets/images/ico-remove.svg" alt="Remover">
-                            </a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <th scope="row"><span class="index">1</span></th>
-                          <td>Bicicleta</td>
-                          <td>02:30 horas</td>
-                          <td>22/06/2021</td>
-                          <td>1.000 cal</td>
-                          <td>
-                            <a href="#" title="Editar" class="ico-edit">
-                              <img src="assets/images/ico-edit.svg" alt="Editar">
-                            </a>
-                          </td>
-                          <td>
-                            <a href="#" title="Editar" class="ico-remove">
-                              <img src="assets/images/ico-remove.svg" alt="Remover">
-                            </a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <th scope="row"><span class="index">1</span></th>
-                          <td>Bicicleta</td>
-                          <td>02:30 horas</td>
-                          <td>22/06/2021</td>
-                          <td>1.000 cal</td>
-                          <td>
-                            <a href="#" title="Editar" class="ico-edit">
-                              <img src="assets/images/ico-edit.svg" alt="Editar">
-                            </a>
-                          </td>
-                          <td>
-                            <a href="#" title="Editar" class="ico-remove">
-                              <img src="assets/images/ico-remove.svg" alt="Remover">
-                            </a>
-                          </td>
-                        </tr>
+                        <c:forEach var="userActivity" items="${userActivityList}" varStatus="index">                      		                      		                   		                      		            
+                      		<tr>
+	                          <th scope="row"><span class="index">${ index.count }</span></th>
+	                          <td>${ userActivity.activity.getName() }</td>
+	                          <td>${ userActivity.getDurationString() }</td>
+	                          <td>${ userActivity.date }</td>
+	                          <td>
+	                            <a href="${ pageContext.request.contextPath }/cad-atividade?item=${ userActivity.id }" title="Editar" class="ico-edit">
+	                              <img src="assets/images/ico-edit.svg" alt="Editar">
+	                            </a>
+	                          </td>
+	                          <td>
+	                            <a href="#" title="Editar" class="ico-remove">
+	                              <img src="assets/images/ico-remove.svg" alt="Remover">
+	                            </a>
+	                          </td>
+	                        </tr>	                        
+						</c:forEach> 
                       </tbody>
                     </table>
                   </div>

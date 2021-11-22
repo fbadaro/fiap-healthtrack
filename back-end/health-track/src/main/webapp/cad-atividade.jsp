@@ -29,7 +29,12 @@
       <div class="container">
         <form class="row g-4" action="atividade" method="post">
           <h5>Cadastro de Atividade</h5>
-          <hr>
+          <c:if test="${not empty msg }">
+		  	<div class="alert alert-success">${msg}</div>
+		  </c:if>
+		  <c:if test="${not empty erro }">
+		  	<div class="alert alert-danger">${erro}</div>
+		  </c:if>
 
           <div class="col-md-12">
             <label for="ddlAtividade" class="form-label">Selecione o tipo de atividade</label>

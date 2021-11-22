@@ -41,6 +41,9 @@ public class DashboardController extends HttpServlet {
 			
 			// Usuario
 			User currentUser = (User) request.getSession().getAttribute("currentUser");
+			
+			var userActivityList = userActivityDAO.ListAllByUserId(currentUser.getId());
+			request.setAttribute("userActivityList", userActivityList);
 						
 			var userFeedList = userFeedDAO.ListAllByUserId(currentUser.getId());
 			request.setAttribute("userFeedList", userFeedList);	

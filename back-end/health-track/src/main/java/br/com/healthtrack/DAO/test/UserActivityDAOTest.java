@@ -29,7 +29,7 @@ public class UserActivityDAOTest {
 //		userActivityDAO.InsertRange(userActivities);
 		
 		// LIST
-		var userActivitiesDatabase = userActivityDAO.ListAll();
+		var userActivitiesDatabase = userActivityDAO.ListAllByUserId(21);
 		
 		for(var item : userActivitiesDatabase) {
 			System.out.println(item.getActivity().getName());

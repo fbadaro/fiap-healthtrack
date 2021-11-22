@@ -34,9 +34,7 @@ public class UserActivityDAO {
 				stmt.setInt(4, userAct.getUser().getId());	
 				
 				connection.ExecuteCommand(stmt);
-				
-				System.out.println("Atividade do usuario adicionada com sucesso!");
-			}								
+							}								
 		} catch (SQLException e) {			
 			e.printStackTrace();
 		}
@@ -134,4 +132,58 @@ public class UserActivityDAO {
 		
 		
 	}
+
+
+
+public List<UserActivity> ListAllByUserId(int userId) {		
+	
+	List<UserActivity> listaUserActivity = new ArrayList<UserActivity>();
+	ResultSet resultSet = null;
+	
+	try {
+		
+		var query = String.format("SELECT * FROM %s WHERE USERID = " + userId, tableName);
+		
+		stmt = connection.GetConnection().prepareStatement(query);
+		resultSet = stmt.executeQuery();			
+		
+		while(resultSet.next()) {
+							
+			var id = resultSet.getInt("ID");
+			var activityDuration = resultSet.getInt("ACTIVITYDURATION");
+			var activityDate  = resultSet.getDate("ACTIVITYDATE");
+			var activityId = resultSet.getInt("ACTIVITYID");
+			
+			var user = new UserDAO().GetById(userId);
+			var activity = new ActivityDAO().Get(activityId);
+			
+			UserActivity userActivity = new UserActivity(
+				id,
+				user, 
+				activity, 
+				activityDuration, 
+				activityDate.toLocalDate()
+			);
+			
+			listaUserActivity.add(userActivity);
+			
+		}
+	} catch (SQLException e) {			
+		e.printStackTrace();
+	} 
+	finally {
+		try {
+			stmt.close();
+			resultSet.close();
+			connection.CloseConnection();
+		} catch (SQLException e) {				
+			e.printStackTrace();
+		}
+	
+	}
+	
+	return listaUserActivity;
 }
+
+}
+

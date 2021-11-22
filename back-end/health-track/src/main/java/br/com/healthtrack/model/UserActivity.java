@@ -106,6 +106,39 @@ public class UserActivity implements BaseRepository<UserActivity> {
 	}
 	
 	
+	public String getDurationString() {
+		String duration = Integer.toString(this.activityDuration);
+		String zero = Integer.toString(0);
+		
+		if (this.activityDuration > 59) {
+			int hora = this.activityDuration / 60;
+			int min = this.activityDuration % 60;
+			
+			
+			String h = Integer.toString(hora);
+			String m = Integer.toString(min);
+			
+			if (min < 10 ) {
+				m = zero + m;
+			}
+			
+			if (hora < 10) {
+				
+				return zero + h + ':' + m;
+			} else {
+				
+				return h + ':' + m;
+			}
+
+		}
+		
+		if (this.activityDuration < 10) {
+			duration = zero + duration;
+		}
+				
+		return zero + zero + ':' + duration;
+	}
+	
 	@Override
 	public UserActivity Get(int id) {
 		System.out.println(String.format("Retornando a atividade do usuario %s da base com sucesso", this.activity.getName()));	

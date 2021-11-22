@@ -15,7 +15,7 @@
      <nav>
        <ul>
          <li>
-           <a href="cad-atividade.jsp">
+           <a href="${ pageContext.request.contextPath }/atividade">
              <img src="assets/images/ico-runner.svg" alt=""> Cadastrar Atividade
            </a>
          </li>

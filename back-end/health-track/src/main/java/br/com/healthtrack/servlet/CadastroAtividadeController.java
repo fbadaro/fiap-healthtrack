@@ -24,38 +24,47 @@ public class CadastroAtividadeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private ActivityDAO activitydao;
     private UserActivityDAO useractivdao;
-    private UserDAO userdao;
     
     public CadastroAtividadeController() {
         super();
         activitydao = DAOFactory.getActivityDAO();
         useractivdao = DAOFactory.getUserActivityDAO();
-        userdao = DAOFactory.getUserDAO();
     }
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		User currentUser = (User) request.getSession().getAttribute("currentUser");
+		
+		var itemId = request.getParameter("item");	
+		
 		var lista = activitydao.ListAll();
-		request.setAttribute("lista", lista);
+		request.getSession().setAttribute("lista", lista);	
 		request.getRequestDispatcher("cad-atividade.jsp").forward(request, response);
 		
 	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		User user = userdao.GetById(1);
-		
-		int idActivity = Integer.parseInt(request.getParameter("idActivity"));
-		Activity acti = activitydao.Get(idActivity);
-		
-		LocalDate data = LocalDate.parse(request.getParameter("date"));
-		
-		String duracao = request.getParameter("duration");
-		int duration = useractivdao.durationToInt(duracao);
-		
-		UserActivity novo = new UserActivity(user, acti, duration, data);
-		useractivdao.Insert(novo);
+		try {
+			User user = (User) request.getSession().getAttribute("currentUser");
 			
+			int idActivity = Integer.parseInt(request.getParameter("idActivity"));
+			Activity acti = activitydao.Get(idActivity);
+			
+			LocalDate data = LocalDate.parse(request.getParameter("date"));
+			
+			String duracao = request.getParameter("duration");
+			int duration = useractivdao.durationToInt(duracao);
+			
+			UserActivity novo = new UserActivity(user, acti, duration, data);
+			useractivdao.Insert(novo);
+			
+			request.setAttribute("msg", "Atividade cadastrado!");			
+		}catch(Exception e) {
+			e.printStackTrace();
+			request.setAttribute("erro", "Valide os dados digitados");
+		}
+		
 		request.getRequestDispatcher("cad-atividade.jsp").forward(request, response);
 	}
 

@@ -27,19 +27,15 @@ public class ImcController extends HttpServlet {
 	private UserWeightDAO weightDAO;
 	private UserDAO userDAO;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public void init() throws ServletException {
         super.init();
         weightDAO = DAOFactory.getUserWeightDAO();
         userDAO = DAOFactory.getUserDAO();
-        // TODO Auto-generated constructor stub
+
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		//User
@@ -51,7 +47,6 @@ public class ImcController extends HttpServlet {
 				
 		request.setAttribute("imc", userweight);
 				
-		//System.out.println(userweight.getHeight());
 		request.getRequestDispatcher("cad-imc.jsp").forward(request, response);			
 		
 		}
@@ -119,7 +114,7 @@ public class ImcController extends HttpServlet {
 			e.printStackTrace();
 			request.setAttribute("erro", "Valide os dados digitados");
 		}
-		//request.getRequestDispatcher("cad-imc.jsp").forward(request, response);
+	
 	}
 }
 

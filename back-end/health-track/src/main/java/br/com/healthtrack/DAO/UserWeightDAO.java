@@ -257,20 +257,17 @@ public class UserWeightDAO {
 					+ "where userid = ? \r\n"
 					+ "group by to_char(weightdate,'MONTH'), to_char(weightdate,'mm') order by mes_numerico",tableName);
 			stmt = connection.GetConnection().prepareStatement(query);
-			//System.out.println(userweight.getWeight() + " " + userweight.getHeight() + " " + userweight.getDate());
+
 
 			stmt.setInt(1, userId);
-			//stmt.setDate(6, java.sql.Date.valueOf(userweight.getDate()));
 			resultSet = stmt.executeQuery();
 
 			while(resultSet.next()) {
 				
 				var IMC = resultSet.getDouble("IMC");
-				//var MES = resultSet.getString("MES");
-				//System.out.println(IMC);
-				//System.out.println(MES);
+
 				imcs.add(resultSet.getDouble("IMC"));
-				//imcs.add(resultSet.getString("MES"));
+
 				
 			}
 		}
@@ -286,7 +283,7 @@ public class UserWeightDAO {
 				e.printStackTrace();
 			}
 		}
-		
+		//retorna apenas uma lista com os valores médios do imc
 		return imcs;
 	}
 	
@@ -307,19 +304,13 @@ public class UserWeightDAO {
 					+ "where userid = ? \r\n"
 					+ "group by to_char(weightdate,'MONTH'), to_char(weightdate,'mm') order by mes_numerico",tableName);
 			stmt = connection.GetConnection().prepareStatement(query);
-			//System.out.println(userweight.getWeight() + " " + userweight.getHeight() + " " + userweight.getDate());
 
 			stmt.setInt(1, userId);
-			//stmt.setDate(6, java.sql.Date.valueOf(userweight.getDate()));
 			resultSet = stmt.executeQuery();
 
 			while(resultSet.next()) {
 				
-				//var IMC = resultSet.getDouble("IMC");
 				var MES = resultSet.getString("MES");
-				//System.out.println(IMC);
-				//System.out.println(MES);
-				//imcs.add(resultSet.getDouble("IMC"));
 				imcsMonth.add('"' + MES + '"');
 				
 			}
@@ -336,7 +327,7 @@ public class UserWeightDAO {
 				e.printStackTrace();
 			}
 		}
-		
+		//retorna apenas uma lista com os nomes dos meses que possuem média de imc
 		return imcsMonth;
 	}
 		

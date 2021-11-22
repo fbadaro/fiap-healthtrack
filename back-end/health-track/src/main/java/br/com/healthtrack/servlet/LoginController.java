@@ -43,14 +43,17 @@ public class LoginController extends HttpServlet {
 		
 		try {
 			String userEmail = request.getParameter("txtUserEmail");
-			String userPass = CryptographyUtils.cryptography(request.getParameter("txtUserPass"));						
+			String userPass = CryptographyUtils.cryptography(request.getParameter("txtUserPass"));											
 			
 			if (currentUserDAO.Authenticate(userEmail, userPass)) {
 				
 				var user = currentUserDAO.GetByEmail(userEmail);	
 				
+				System.out.println(userEmail);
+				System.out.println(userPass);
+				
 				request.getSession().setAttribute("currentUser", user);	
-				response.sendRedirect("dash.jsp");
+				response.sendRedirect("dash");
 			}
 			else {
 				request.setAttribute("error", "Usuario ou Senha invalidos");

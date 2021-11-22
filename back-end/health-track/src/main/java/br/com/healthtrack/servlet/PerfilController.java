@@ -61,7 +61,7 @@ public class PerfilController extends HttpServlet {
 		var updatedUser = currentUserDAO.Update(user, currentUser.getId());	
 		
 		request.getSession().setAttribute("currentUser", updatedUser);			
-		response.sendRedirect("dash.jsp");
+		response.sendRedirect("dash");
 	}
 
 }

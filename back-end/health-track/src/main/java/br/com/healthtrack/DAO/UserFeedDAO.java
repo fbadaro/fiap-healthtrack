@@ -75,6 +75,60 @@ public class UserFeedDAO {
 		return true;
 	}
 	
+	public List<UserFeed> ListAllByUserId(int userId) {		
+		
+		List<UserFeed> listaUserFeed = new ArrayList<UserFeed>();
+		ResultSet resultSet = null;
+		
+		try {
+			
+			var query = String.format("SELECT * FROM %s WHERE USERID = " + userId, tableName);
+			
+			stmt = connection.GetConnection().prepareStatement(query);
+			resultSet = stmt.executeQuery();			
+			
+			while(resultSet.next()) {
+								
+				var id = resultSet.getInt("ID");
+				var quantity = resultSet.getDouble("QUANTITY");
+				var type = resultSet.getInt("TYPE");
+				var feedDate = resultSet.getDate("FEEDDATE");
+				var feedId = resultSet.getInt("FEEDID");				
+				var cal = resultSet.getDouble("CAL");
+				
+				var user = new UserDAO().GetById(userId);
+				var feed = new FeedDAO().Get(feedId);
+				
+				UserFeed userFeed = new UserFeed(
+					id,
+					user, 
+					feed,
+					quantity,
+					type, 
+					feedDate.toLocalDate(),
+					cal
+				);
+				
+				listaUserFeed.add(userFeed);
+				
+			}
+		} catch (SQLException e) {			
+			e.printStackTrace();
+		} 
+		finally {
+			try {
+				stmt.close();
+				resultSet.close();
+				connection.CloseConnection();
+			} catch (SQLException e) {				
+				e.printStackTrace();
+			}
+		
+		}
+		
+		return listaUserFeed;
+	}
+	
 	public List<UserFeed> ListAll() {		
 		
 		List<UserFeed> listaUserFeed = new ArrayList<UserFeed>();

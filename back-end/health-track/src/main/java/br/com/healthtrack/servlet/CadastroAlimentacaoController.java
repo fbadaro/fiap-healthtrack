@@ -82,7 +82,7 @@ public class CadastroAlimentacaoController extends HttpServlet {
 			var feed = new UserFeed(currentUser, selectedFeed, feedQuantity, feedType, feedDate, feedCal);
 			userFeedDAO.Insert(feed);	
 			
-			response.sendRedirect("dash.jsp");	
+			response.sendRedirect("dash");	
 		}
 		catch (Exception ex) {
 			System.out.println(ex.getMessage());

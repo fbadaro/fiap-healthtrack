@@ -95,9 +95,9 @@ public class UserDAO {
 			
 			stmt = connection.GetConnection().prepareStatement(query);	
 			
-			resultSet = stmt.executeQuery();	
+			resultSet = stmt.executeQuery();
 			
-			if (resultSet.next() != false) {
+			if (resultSet.next()) {					
 				existUser = true;
 			}
 			

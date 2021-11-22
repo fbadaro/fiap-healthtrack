@@ -1,6 +1,6 @@
 <header class="container">
   <div class="ht-header-logo">
-    <a href="dash.jsp" title="Health Track" class="ht-logo-letter">
+    <a href="${ pageContext.request.contextPath }/dash" title="Health Track" class="ht-logo-letter">
       <img src="assets/images/logo-letters.svg" alt="">
     </a>
     <h6>

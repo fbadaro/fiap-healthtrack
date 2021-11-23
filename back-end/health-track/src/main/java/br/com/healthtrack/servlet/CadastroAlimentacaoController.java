@@ -47,19 +47,19 @@ public class CadastroAlimentacaoController extends HttpServlet {
 			User currentUser = (User) request.getSession().getAttribute("currentUser");
 			
 			var itemId = request.getParameter("item");
-			
-			var feedList = feedDAO.ListAll();
-			request.setAttribute("feedList", feedList);			
+					
+			request.setAttribute("feedList", feedDAO.ListAll());			
 			
 			if (itemId != null) {
-				System.out.println("Item preenchido - alterar:" + itemId);
-			}		
-			
-			request.getRequestDispatcher("cad-alimentacao.jsp").forward(request, response);
+				var currentFeed = userFeedDAO.GetById(Integer.parseInt(itemId));
+				request.setAttribute("currentFeed", currentFeed);	
+			}				
 		}
 		catch (Exception ex) {
-			System.out.println(ex.getMessage());
-		}			
+			System.out.println(ex.getMessage());			
+		}
+		
+		request.getRequestDispatcher("cad-alimentacao.jsp").forward(request, response);
 	}
 
 	/**
@@ -71,6 +71,10 @@ public class CadastroAlimentacaoController extends HttpServlet {
 			// Usuario
 			User currentUser = (User) request.getSession().getAttribute("currentUser");
 			
+			Integer usFeedId = request.getParameter("txtUsFeedId") != "" 
+					? Integer.parseInt(request.getParameter("txtUsFeedId"))
+					: 0;					
+			
 			Integer feedId = Integer.parseInt(request.getParameter("ddlFeed"));
 			LocalDate feedDate = LocalDate.parse(request.getParameter("txtDate").replace('-', '/'), DateTimeFormatter.ofPattern("yyyy/MM/dd"));
 			Double feedQuantity = Double.parseDouble(request.getParameter("txtQuantity"));
@@ -78,17 +82,28 @@ public class CadastroAlimentacaoController extends HttpServlet {
 			Integer feedType = Integer.parseInt(request.getParameter("ddlType"));
 			
 			Feed selectedFeed = feedDAO.Get(feedId);
+						
+			request.setAttribute("feedList", feedDAO.ListAll());	
 			
-			var feed = new UserFeed(currentUser, selectedFeed, feedQuantity, feedType, feedDate, feedCal);
-			userFeedDAO.Insert(feed);	
-			
-			response.sendRedirect("dash");	
+			if (usFeedId == 0) {
+				var feed = new UserFeed(currentUser, selectedFeed, feedQuantity, feedType, feedDate, feedCal);
+				userFeedDAO.Insert(feed);
+				request.setAttribute("msg", "Alimetacao cadastrada!");
+			} 
+			else {				
+				var feed = new UserFeed(usFeedId, currentUser, selectedFeed, feedQuantity, feedType, feedDate, feedCal);
+				userFeedDAO.Update(feed);
+				
+				request.setAttribute("currentFeed", feed);	
+				request.setAttribute("msg", "Alimetacao atualizada!");
+			}											
 		}
 		catch (Exception ex) {
 			System.out.println(ex.getMessage());
-			request.setAttribute("error", "Erro ao cadastrar alimentacao");
-			request.getRequestDispatcher("cad-alimentacao.jsp").forward(request, response);
+			request.setAttribute("error", "Erro ao cadastrar alimentacao");			
 		}
+		
+		request.getRequestDispatcher("cad-alimentacao.jsp").forward(request, response);
 	}
 
 }

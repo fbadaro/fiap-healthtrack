@@ -57,8 +57,8 @@ public class PerfilController extends HttpServlet {
 		Double userHeight = Double.parseDouble(request.getParameter("txtHeight"));
 		Double userWeight = Double.parseDouble(request.getParameter("txtWeight"));
 		
-		var user = new User(userName, userEmail, currentUser.getLogin(), currentUser.getPass(), userHeight, userWeight, userBirthday);			
-		var updatedUser = currentUserDAO.Update(user, currentUser.getId());	
+		var user = new User(currentUser.getId(), userName, userEmail, currentUser.getLogin(), currentUser.getPass(), userHeight, userWeight, userBirthday);			
+		var updatedUser = currentUserDAO.Update(user);	
 		
 		request.getSession().setAttribute("currentUser", updatedUser);			
 		response.sendRedirect("dash");

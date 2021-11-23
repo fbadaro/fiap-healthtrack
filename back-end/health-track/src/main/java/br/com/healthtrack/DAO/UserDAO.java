@@ -56,14 +56,14 @@ public class UserDAO {
 		return createdUser;
 	}
 	
-	public User Update(User user, int userId) {
+	public User Update(User user) {
 		
 		User updateddUser = null;
 		
 		try {
 			
-			var query = String.format("UPDATE %s SET NAME = %s, EMAIL = %s, BIRTHDAY = %s, WEIGHT = %s, HEIGHT = %s "
-					+ "WHERE ID = " + userId, tableName); 
+			var query = String.format("UPDATE %s SET NAME = ?, EMAIL = ?, BIRTHDAY = ?, WEIGHT = ?, HEIGHT = ? "
+					+ "WHERE ID = " + user.getId(), tableName); 
 			
 			stmt = connection.GetConnection().prepareStatement(query);			
 			

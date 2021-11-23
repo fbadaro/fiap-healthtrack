@@ -40,6 +40,29 @@ public class UserActivityDAO {
 		}
 	}
 	
+	public void Update(UserActivity userAct) {
+		
+		try {
+			
+			if (ExistUser(userAct.getUser().getId()) && ExistActivity(userAct.getActivity().getId())) {
+				
+				var query = String.format("UPDATE %s SET ACTIVITYDURATION = ?, ACTIVITYDATE = ?, ACTIVITYID = ?, USERID= ? "
+					+"WHERE ID = " + userAct.getId(),  tableName); 
+				
+				stmt = connection.GetConnection().prepareStatement(query);			
+				
+				stmt.setInt(1, userAct.getActivityDuration());	
+				stmt.setDate(2, java.sql.Date.valueOf(userAct.getDate()));	
+				stmt.setInt(3, userAct.getActivity().getId());	
+				stmt.setInt(4, userAct.getUser().getId());	
+				
+				connection.ExecuteCommand(stmt);
+							}								
+		} catch (SQLException e) {			
+			e.printStackTrace();
+		}
+	}
+	
 	public void InsertRange(List<UserActivity> activities) {
 		
 		for(var item : activities) {
@@ -183,6 +206,56 @@ public List<UserActivity> ListAllByUserId(int userId) {
 	}
 	
 	return listaUserActivity;
+}
+
+
+public UserActivity GetById(int userAcvitivityID) {		
+	
+	UserActivity  userActivity = null;
+	ResultSet resultSet = null;
+	
+	try {
+		
+		var query = String.format("SELECT * FROM %s WHERE ID = " + userAcvitivityID, tableName);
+		
+		stmt = connection.GetConnection().prepareStatement(query);
+		resultSet = stmt.executeQuery();			
+		
+		if (resultSet.next()) {
+							
+			var id = resultSet.getInt("ID");
+			var activityDuration = resultSet.getInt("ACTIVITYDURATION");
+			var activityDate  = resultSet.getDate("ACTIVITYDATE");
+			var userId = resultSet.getInt("USERID");
+			var activityId = resultSet.getInt("ACTIVITYID");
+			
+			var user = new UserDAO().GetById(userId);
+			var activity = new ActivityDAO().Get(activityId);
+			
+			userActivity = new UserActivity(
+				id,
+				user, 
+				activity, 
+				activityDuration, 
+				activityDate.toLocalDate()
+			);
+			
+		}
+	} catch (SQLException e) {			
+		e.printStackTrace();
+	} 
+	finally {
+		try {
+			stmt.close();
+			resultSet.close();
+			connection.CloseConnection();
+		} catch (SQLException e) {				
+			e.printStackTrace();
+		}
+	
+	}
+	
+	return userActivity;
 }
 
 }

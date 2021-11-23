@@ -35,22 +35,24 @@
 		  <c:if test="${not empty erro }">
 		  	<div class="alert alert-danger">${erro}</div>
 		  </c:if>
+		  
+		  <input type="hidden" name="txtUsFeedId" value="${ userActi.id }">
 
           <div class="col-md-12">
             <label for="ddlAtividade" class="form-label">Selecione o tipo de atividade</label>
             <select id="ddlAtividade" name="idActivity" class="form-select">
             <c:forEach var="activity" items="${lista}">
-              <option value='${activity.id}'>${activity.name}</option>
+				<option value="${activity.id}" ${ userActi.activity.id == activity.id ? 'selected=selected' : '' }>${activity.name}</option>
             </c:forEach>
             </select>
           </div>
           <div class="col-md-6">
             <label for="txtDate" class="form-label">Data</label>
-            <input type="date" class="form-control" id="txtDate" name="date">
+            <input type="date" class="form-control" id="txtDate" name="date" value='${userActi.date}'>
           </div>
           <div class="col-md-6">
             <label for="txtTime" class="form-label">Duração Atividade</label>
-            <input type="time" class="form-control" id="txtTime" name="duration">
+            <input type="time" class="form-control" id="txtTime" name="duration" value='${userActi.getDurationString() }'>
           </div>
           <div class="col-12">
             <button type="submit" class="btn btn-primary float-end">Cadastrar</button>

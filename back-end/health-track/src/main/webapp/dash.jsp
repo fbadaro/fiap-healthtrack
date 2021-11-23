@@ -66,7 +66,7 @@
 	                          <td>${ userActivity.getDurationString() }</td>
 	                          <td>${ userActivity.date }</td>
 	                          <td>
-	                            <a href="${ pageContext.request.contextPath }/cad-atividade?item=${ userActivity.id }" title="Editar" class="ico-edit">
+	                            <a href="${ pageContext.request.contextPath }/atividade?item=${ userActivity.id }" title="Editar" class="ico-edit">
 	                              <img src="assets/images/ico-edit.svg" alt="Editar">
 	                            </a>
 	                          </td>

@@ -17,6 +17,7 @@ import br.com.healthtrack.factory.DAOFactory;
 import br.com.healthtrack.model.Activity;
 import br.com.healthtrack.model.User;
 import br.com.healthtrack.model.UserActivity;
+import br.com.healthtrack.model.UserFeed;
 
 
 @WebServlet("/atividade")
@@ -35,10 +36,17 @@ public class CadastroAtividadeController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		User currentUser = (User) request.getSession().getAttribute("currentUser");
 		
-		var itemId = request.getParameter("item");	
+		var itemId = request.getParameter("item");
 		
 		var lista = activitydao.ListAll();
 		request.getSession().setAttribute("lista", lista);	
+		
+		if (itemId != null) {
+			UserActivity usactivi =  useractivdao.GetById(Integer.parseInt(itemId));
+			request.setAttribute("userActi", usactivi);			
+			
+		}
+		
 		request.getRequestDispatcher("cad-atividade.jsp").forward(request, response);
 		
 	}
@@ -48,6 +56,10 @@ public class CadastroAtividadeController extends HttpServlet {
 		try {
 			User user = (User) request.getSession().getAttribute("currentUser");
 			
+			Integer usActiId = request.getParameter("txtUsFeedId") != "" 
+					? Integer.parseInt(request.getParameter("txtUsFeedId"))
+					: 0;	
+			
 			int idActivity = Integer.parseInt(request.getParameter("idActivity"));
 			Activity acti = activitydao.Get(idActivity);
 			
@@ -56,10 +68,19 @@ public class CadastroAtividadeController extends HttpServlet {
 			String duracao = request.getParameter("duration");
 			int duration = useractivdao.durationToInt(duracao);
 			
-			UserActivity novo = new UserActivity(user, acti, duration, data);
-			useractivdao.Insert(novo);
-			
-			request.setAttribute("msg", "Atividade cadastrado!");			
+			if (usActiId == 0) {
+				UserActivity novo = new UserActivity(user, acti, duration, data);
+				useractivdao.Insert(novo);
+				request.setAttribute("msg", "Atividade cadastrada!");
+			} 
+			else {				
+				UserActivity novo = new UserActivity(usActiId,user, acti, duration, data);
+				useractivdao.Update(novo);
+				
+				request.setAttribute("userActi", novo);	
+				request.setAttribute("msg", "Atividade atualizada!");
+			}	
+						
 		}catch(Exception e) {
 			e.printStackTrace();
 			request.setAttribute("erro", "Valide os dados digitados");

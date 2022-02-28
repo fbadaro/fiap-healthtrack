@@ -6,4 +6,3 @@
 * Fabio Badaro
 * Gabi Chiquetto
 * William Dias
-* Natasha Zonta
